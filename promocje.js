@@ -1,0 +1,1 @@
+fetch('data/promocje.json').then(r=>r.json()).then(d=>{const g=document.getElementById('promo-grid');d.forEach(p=>{const div=document.createElement('div');div.className='promo-tile';div.innerHTML=`<h3>${p.title}</h3><p>${p.description}</p><a href="${p.link}">${p.cta}</a>`;g.appendChild(div);});});
