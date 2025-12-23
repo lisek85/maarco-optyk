@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = document.getElementById("promo-grid");
   if (!grid) return;
 
-  fetch("promocje.json")
+  fetch("/promocje.json")
     .then(res => res.json())
     .then(data => {
       grid.innerHTML = "";
