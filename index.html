@@ -9,24 +9,30 @@
 </head>
 <body>
 <header class="header">
-<img src="logo.png" alt="Maarco Optyk logo" class="logo">
-<nav>
-  <a class="cta-call" href="tel:+48885020020">Zadzwoń</a>
-<a class="cta-map"
-   href="https://www.google.com/maps/dir/?api=1&destination=Maarco+Optyk+Lędziny"
-   target="_blank" rel="noopener">
-   Nawiguj
-</a>
+  <a class="brand" href="index.html">
+    <img src="logo.png" alt="Maarco Optyk logo" class="logo">
+  </a>
 
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+    ☰
+    <span class="sr-only">Menu</span>
+  </button>
 
-<a href="onas.html">O nas</a>
-<a href="oferta.html">Oferta</a>
-<a href="badania-wzroku.html">Badania wzroku</a>
-<a href="galeria.html">Galeria</a>
-<a href="blog.html">Blog</a>
-<a href="kontakt.html">Kontakt</a>
-</nav>
+  <nav id="site-nav" class="nav" aria-label="Główna nawigacja">
+    <a href="onas.html">O nas</a>
+    <a href="oferta.html">Oferta</a>
+    <a href="badania-wzroku.html">Badania wzroku</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="blog.html">Blog</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+
+  <div class="header-cta">
+    <a class="cta-call" href="tel:+48885020020">Zadzwoń</a>
+    <a class="cta-map" href="https://www.google.com/maps/dir/?api=1&destination=Maarco+Optyk+Lędziny" target="_blank" rel="noopener">Nawiguj</a>
+  </div>
 </header>
+
 
 <main>
 <section class="hero">
