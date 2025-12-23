@@ -67,3 +67,209 @@
   /* 6) Dajemy miejsce na fixed CTA */
   body { padding-bottom: 140px; }
 }
+/* =========================
+   PREMIUM DESIGN (KROK 2)
+   wklej na KONIEC style.css
+   ========================= */
+
+/* Reset / baza */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.55;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+/* czytelność linków */
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* dostępność (ukryty tekst) */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* kontener */
+main { max-width: 1100px; margin: 0 auto; padding: 22px 16px 40px; }
+
+/* ===== HEADER ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(15,23,42,.10);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 14px;
+}
+
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.logo { height: 40px; width: auto; display: block; }
+
+.nav { display: flex; gap: 14px; align-items: center; }
+.nav a {
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+.nav a:hover { background: rgba(15,23,42,.06); text-decoration: none; }
+
+.header-cta { display: inline-flex; gap: 10px; align-items: center; }
+
+/* przyciski */
+.cta-call, .cta-map {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid rgba(15,23,42,.14);
+  background: #ffffff;
+}
+
+.cta-call:hover, .cta-map:hover { text-decoration: none; transform: translateY(-1px); }
+.cta-call { background: #0f172a; color: #fff; border-color: #0f172a; }
+.cta-map  { background: #ffffff; color: #0f172a; }
+
+/* hamburger */
+.menu-toggle {
+  display: none;
+  border: 1px solid rgba(15,23,42,.18);
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* ===== HERO ===== */
+.hero, .page-hero {
+  padding: 26px 18px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(15,23,42,.06), rgba(15,23,42,.02));
+  border: 1px solid rgba(15,23,42,.08);
+}
+
+.hero h1, .page-hero h1 {
+  margin: 0 0 10px;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+}
+
+.hero p, .page-hero p { margin: 0; font-size: 16px; color: rgba(15,23,42,.78); }
+
+/* ===== SEKCJE ===== */
+.promocje { margin-top: 18px; }
+.promocje h2 { margin: 10px 0 14px; font-size: 22px; }
+
+/* siatka promocji / kafle */
+#promo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.promo-card {
+  border: 1px solid rgba(15,23,42,.10);
+  border-radius: 18px;
+  background: #fff;
+  padding: 14px;
+  box-shadow: 0 10px 24px rgba(15,23,42,.06);
+}
+
+.promo-card h3 { margin: 0 0 6px; font-size: 16px; }
+.promo-card p { margin: 0; color: rgba(15,23,42,.75); }
+
+/* ===== CONTENT ===== */
+.page-content {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(15,23,42,.08);
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(15,23,42,.04);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  border-top: 1px solid rgba(15,23,42,.10);
+  background: #0b1220;
+  color: rgba(255,255,255,.90);
+  margin-top: 30px;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 16px;
+  font-size: 14px;
+}
+.footer a { color: #fff; text-decoration: underline; }
+
+/* ===== MOBILE ===== */
+@media (max-width: 860px) {
+  .logo { height: 36px; }
+
+  /* desktop nav znika, hamburger się pojawia */
+  .nav { display: none; }
+  .menu-toggle { display: inline-flex; }
+
+  /* CTA w header chowamy, bo mamy CTA fixed na dole */
+  .header-cta { display: none; }
+
+  /* dropdown menu */
+  .nav.is-open {
+    display: flex;
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: 60px;
+    background: #fff;
+    border: 1px solid rgba(15,23,42,.12);
+    border-radius: 18px;
+    padding: 12px;
+    box-shadow: 0 16px 32px rgba(15,23,42,.12);
+    flex-direction: column;
+    gap: 6px;
+    z-index: 9999;
+  }
+  .nav.is-open a { width: 100%; padding: 12px; }
+
+  /* hero mniejszy */
+  .hero h1, .page-hero h1 { font-size: 28px; }
+  main { padding-top: 16px; }
+
+  /* promo grid na mobile */
+  #promo-grid { grid-template-columns: 1fr; }
+
+  /* CTA fixed na dole – uporządkowane */
+  .cta-map, .cta-call {
+    position: fixed;
+    left: 14px;
+    right: 14px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 9998;
+    box-shadow: 0 14px 30px rgba(15,23,42,.18);
+  }
+  .cta-map { bottom: 74px; }
+  .cta-call { bottom: 18px; }
+
+  /* miejsce na fixed CTA */
+  body { padding-bottom: 150px; }
+}
