@@ -1,1 +1,70 @@
 body{margin:0;font-family:Arial} .header{display:flex;justify-content:space-between;padding:1rem} .logo{height:50px} nav a{margin-left:15px;text-decoration:none;color:#000} .hero,.promocje{padding:2rem} #promo-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))} .promo-tile{border:1px solid #ddd;padding:1rem;border-radius:8px} footer{background:#111;color:#fff;padding:1.5rem;text-align:center} footer a{color:#fff}
+/* ===== MOBILE WOW PACK (Maarco Optyk) ===== */
+
+/* 1) Globalna czytelność */
+html { -webkit-text-size-adjust: 100%; }
+body { line-height: 1.5; }
+img { max-width: 100%; height: auto; }
+
+/* 2) Bezpieczne odstępy na mobile */
+main { padding-left: 16px; padding-right: 16px; }
+section { padding-top: 18px; padding-bottom: 18px; }
+
+/* 3) Nagłówek: lepsza typografia i “sticky” */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+
+/* 4) CTA (Zadzwoń / Nawiguj) – ładne i klikalne */
+.cta-call, .cta-map {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 10px 14px;
+  margin-left: 8px;
+  border: 1px solid rgba(0,0,0,.15);
+}
+
+/* 5) Mobile layout */
+@media (max-width: 860px) {
+  /* menu niech się zawija zamiast uciekać */
+  nav { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  /* logo i header bardziej kompaktowe */
+  .logo { height: 40px; width: auto; }
+
+  /* nagłówki mniejsze na telefonie */
+  h1 { font-size: 26px; line-height: 1.15; }
+  h2 { font-size: 20px; }
+
+  /* przyciski CTA większe na dotyk */
+  .cta-call, .cta-map {
+    padding: 12px 16px;
+    margin-top: 10px;
+  }
+
+  /* “dolny pasek akcji” – robi wrażenie i zwiększa kontakt */
+  .cta-call {
+    position: fixed;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    z-index: 1000;
+  }
+  .cta-map {
+    position: fixed;
+    left: 14px;
+    right: 14px;
+    bottom: 62px; /* nad “Zadzwoń” */
+    z-index: 1000;
+  }
+
+  /* żeby treść nie była zasłonięta przez przyciski na dole */
+  body { padding-bottom: 140px; }
+}
