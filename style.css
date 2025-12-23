@@ -68,3 +68,57 @@ section { padding-top: 18px; padding-bottom: 18px; }
   /* żeby treść nie była zasłonięta przez przyciski na dole */
   body { padding-bottom: 140px; }
 }
+/* ===== Mobile Hamburger Menu ===== */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+
+.menu-toggle {
+  display: none;
+  border: 1px solid rgba(0,0,0,.15);
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 18px;
+}
+
+.nav { display: flex; gap: 14px; align-items: center; }
+
+.header-cta { display: inline-flex; align-items: center; }
+
+@media (max-width: 860px) {
+  .header {
+    gap: 10px;
+    align-items: center;
+    padding: 12px 14px;
+  }
+
+  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+
+  /* chowamy nav na telefonie, pokażemy po kliknięciu */
+  .nav {
+    display: none;
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: 64px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.10);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav a { padding: 8px 10px; width: 100%; }
+
+  .nav.is-open { display: flex; }
+
+  /* CTA na dole ekranu zostaje jak wcześniej – header CTA może być schowane */
+  .header-cta { display: none; }
+}
