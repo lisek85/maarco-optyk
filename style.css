@@ -187,7 +187,6 @@ main {
 }
 
 .contact-info h2 { margin-top: 0; }
-
 .contact-info a { font-weight: 600; }
 
 .contact-cta {
@@ -204,6 +203,7 @@ main {
   border: 1px solid rgba(15,23,42,.10);
   box-shadow: 0 10px 24px rgba(15,23,42,.08);
   min-height: 260px;
+  background: #fff;
 }
 
 .contact-map iframe {
@@ -214,25 +214,125 @@ main {
 }
 
 /* =====================================================
-   FOOTER
+   FOOTER – FINAL (dane lewo, social prawo)
    ===================================================== */
 .footer {
-  border-top: 1px solid rgba(15,23,42,.10);
   background: #0b1220;
   color: rgba(255,255,255,.90);
+  border-top: 1px solid rgba(255,255,255,.12);
   margin-top: 30px;
 }
 
 .footer-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 18px 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   font-size: 14px;
 }
 
-.footer a {
+/* LEWA STRONA – DANE (zalecane: owiń dane w <div class="footer-info">) */
+.footer-info {
+  line-height: 1.6;
+  min-width: 240px;
+}
+
+.footer-info strong { display: inline-block; margin-bottom: 2px; }
+
+.footer-info a {
   color: #ffffff;
-  text-decoration: underline;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-info a:hover { text-decoration: underline; }
+
+/* PRAWA STRONA – SOCIAL */
+.footer-social {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0; /* ważne: nie zjeżdża w dół */
+}
+
+/* =====================================================
+   SOCIAL MEDIA – HEADER + FOOTER
+   (działa dla: <a><svg> ORAZ .social-btn/.social-ic)
+   ===================================================== */
+
+/* HEADER SOCIAL */
+.header-social {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  margin-left: 6px;
+  white-space: nowrap;
+}
+
+.header-social a,
+.header-social .social-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(15,23,42,.18);
+  background: #ffffff;
+  color: #0f172a;
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.header-social a:hover,
+.header-social .social-btn:hover {
+  background: rgba(15,23,42,.06);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15,23,42,.12);
+  text-decoration: none;
+}
+
+.header-social svg,
+.header-social .social-ic {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  display: block;
+}
+
+/* FOOTER SOCIAL – wyraźne na czarnym tle */
+.footer-social a,
+.footer-social .social-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,.42);
+  background: rgba(255,255,255,.10);
+  color: #ffffff;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.footer-social a:hover,
+.footer-social .social-btn:hover {
+  background: rgba(255,255,255,.18);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.footer-social svg,
+.footer-social .social-ic {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  display: block;
 }
 
 /* =====================================================
@@ -245,7 +345,12 @@ main {
   /* nav */
   .nav { display: none; }
   .menu-toggle { display: inline-flex; }
+
+  /* CTA header chowamy na mobile */
   .header-cta { display: none; }
+
+  /* social w headerze chowamy na mobile */
+  .header-social { display: none; }
 
   .nav.is-open {
     display: flex;
@@ -286,8 +391,17 @@ main {
   body { padding-bottom: 150px; }
 
   /* kontakt mobile */
-  .contact-grid {
-    grid-template-columns: 1fr;
+  .contact-grid { grid-template-columns: 1fr; }
+
+  /* stopka mobile */
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-social {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 12px;
   }
 }
 
@@ -296,120 +410,4 @@ main {
    ===================================================== */
 @supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
   .header { background: #ffffff; }
-}
-
-/* =====================================================
-   SOCIAL MEDIA – FINAL (działa dla: <a><svg> ORAZ .social-btn/.social-ic)
-   ===================================================== */
-
-/* HEADER SOCIAL */
-.header-social {
-  display: inline-flex !important;
-  flex-direction: row !important;
-  gap: 10px;
-  align-items: center;
-  margin-left: 6px;
-  white-space: nowrap;
-}
-
-/* wspólny styl dla linków social: obsługa obu wariantów HTML */
-.header-social a,
-.header-social .social-btn,
-.footer-social a,
-.footer-social .social-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
-}
-
-/* HEADER – jasne tło, ciemne ikony */
-.header-social a,
-.header-social .social-btn {
-  border: 1px solid rgba(15,23,42,.18);
-  background: #ffffff;
-  color: #0f172a;
-}
-
-.header-social a:hover,
-.header-social .social-btn:hover {
-  background: rgba(15,23,42,.06);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(15,23,42,.12);
-  text-decoration: none;
-}
-
-/* Ikony: oba warianty SVG */
-.header-social svg,
-.header-social .social-ic {
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
-  display: block;
-}
-
-/* na mobile chowamy social w headerze (masz CTA fixed) */
-@media (max-width: 860px){
-  .header-social { display: none !important; }
-}
-
-/* FOOTER SOCIAL */
-.footer-social{
-  display: flex !important;
-  flex-direction: row !important;
-  gap: 14px;
-  margin-top: 14px;
-  align-items: center;
-}
-
-/* stopka: mocniej widoczne na czarnym tle */
-.footer-social a,
-.footer-social .social-btn{
-  border: 1px solid rgba(255,255,255,.42);
-  background: rgba(255,255,255,.10);
-  color: #ffffff;
-}
-
-.footer-social a:hover,
-.footer-social .social-btn:hover{
-  background: rgba(255,255,255,.18);
-  transform: translateY(-2px);
-  text-decoration: none;
-}
-
-/* ikony w stopce */
-.footer-social svg,
-.footer-social .social-ic{
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
-  display: block;
-}
-/* ===== FOOTER: dane lewo, social prawo ===== */
-.footer-inner{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.footer-social{
-  margin-top: 0 !important;      /* usuwa zjazd w dół */
-  justify-content: flex-end;
-}
-
-/* na mobile: niech się ładnie łamie */
-@media (max-width: 860px){
-  .footer-inner{
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .footer-social{
-    width: 100%;
-    justify-content: flex-start;
-    margin-top: 12px !important;
-  }
 }
