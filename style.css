@@ -48,6 +48,9 @@ main {
   justify-content: space-between;
   gap: 14px;
   padding: 10px 14px;
+
+  /* FIX: nie łam elementów w pionie przez social */
+  flex-wrap: nowrap;
 }
 
 .brand { display: inline-flex; align-items: center; }
@@ -294,73 +297,94 @@ main {
 @supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
   .header { background: #ffffff; }
 }
+
 /* =====================================================
-   SOCIAL MEDIA – HEADER + FOOTER
+   SOCIAL MEDIA – FINAL (działa dla: <a><svg> ORAZ .social-btn/.social-ic)
    ===================================================== */
 
-/* ===== HEADER SOCIAL ===== */
-.header-social{
-  display: inline-flex;
+/* HEADER SOCIAL */
+.header-social {
+  display: inline-flex !important;
+  flex-direction: row !important;
   gap: 10px;
   align-items: center;
   margin-left: 6px;
+  white-space: nowrap;
 }
 
-.header-social a{
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+/* wspólny styl dla linków social: obsługa obu wariantów HTML */
+.header-social a,
+.header-social .social-btn,
+.footer-social a,
+.footer-social .social-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(15,23,42,.18);
-  background: #ffffff;
   transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
 }
 
-.header-social svg{
-  width: 18px;
-  height: 18px;
-  fill: #0f172a;
+/* HEADER – jasne tło, ciemne ikony */
+.header-social a,
+.header-social .social-btn {
+  border: 1px solid rgba(15,23,42,.18);
+  background: #ffffff;
+  color: #0f172a;
 }
 
-.header-social a:hover{
+.header-social a:hover,
+.header-social .social-btn:hover {
   background: rgba(15,23,42,.06);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(15,23,42,.12);
+  text-decoration: none;
+}
+
+/* Ikony: oba warianty SVG */
+.header-social svg,
+.header-social .social-ic {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  display: block;
 }
 
 /* na mobile chowamy social w headerze (masz CTA fixed) */
 @media (max-width: 860px){
-  .header-social{ display: none; }
+  .header-social { display: none !important; }
 }
 
-/* ===== FOOTER SOCIAL ===== */
+/* FOOTER SOCIAL */
 .footer-social{
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important;
   gap: 14px;
   margin-top: 14px;
-}
-
-.footer-social a{
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255,255,255,.45);
-  background: transparent;
-  transition: transform .2s ease, background .2s ease;
 }
 
-.footer-social svg{
-  width: 18px;
-  height: 18px;
-  fill: #ffffff;
+/* stopka: mocniej widoczne na czarnym tle */
+.footer-social a,
+.footer-social .social-btn{
+  border: 1px solid rgba(255,255,255,.42);
+  background: rgba(255,255,255,.10);
+  color: #ffffff;
 }
 
-.footer-social a:hover{
-  background: rgba(255,255,255,.15);
+.footer-social a:hover,
+.footer-social .social-btn:hover{
+  background: rgba(255,255,255,.18);
   transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* ikony w stopce */
+.footer-social svg,
+.footer-social .social-ic{
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  display: block;
 }
