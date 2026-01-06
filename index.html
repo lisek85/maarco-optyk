@@ -4,17 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maarco Optyk Lędziny – okulary i badania wzroku</title>
-  <meta name="description" content="Maarco Optyk Lędziny – okulary korekcyjne, przeciwsłoneczne, soczewki kontaktowe, badania wzroku." />
+  <meta name="description" content="Maarco Optyk Lędziny – okulary korekcyjne, przeciwsłoneczne, soczewki kontaktowe, badania wzroku. Szkła progresywne, dwugoniskowe, fotochromatyczne. Serwis i naprawy okularów." />
   <link rel="stylesheet" href="style.css?v=300" />
 </head>
 <body>
 
 <header class="header">
-  <a class="brand" href="index.html">
+  <a class="brand" href="index.html" aria-label="Strona główna">
     <img src="logo.png" alt="Maarco Optyk" class="logo">
   </a>
 
-  <nav id="site-nav" class="nav">
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+    ☰ <span class="sr-only">Menu</span>
+  </button>
+
+  <nav id="site-nav" class="nav" aria-label="Główna nawigacja">
     <a href="#onas">O nas</a>
     <a href="#oferta">Oferta</a>
     <a href="#badania">Badania wzroku</a>
@@ -25,47 +29,150 @@
 
   <div class="header-cta">
     <a class="cta-call" href="tel:+48885020020">Zadzwoń</a>
-    <a class="cta-map" href="https://www.google.com/maps/dir/?api=1&destination=Maarco+Optyk+Lędziny" target="_blank">Nawiguj</a>
+    <a class="cta-map" href="https://www.google.com/maps/dir/?api=1&destination=Maarco+Optyk+Lędziny" target="_blank" rel="noopener">Nawiguj</a>
   </div>
 
   <!-- SOCIAL HEADER -->
-  <div class="header-social">
-    <a class="social-btn" href="https://www.facebook.com/MaarcoOptyk" target="_blank" aria-label="Facebook">
-      <svg class="social-ic" viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.1c0-.9.3-1.5 1.6-1.5H16.7V5c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.6V11H7v3h2.7v8h3.8z"/></svg>
+  <div class="header-social" aria-label="Social media">
+    <a class="social-btn" href="https://www.facebook.com/MaarcoOptyk" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.1c0-.9.3-1.5 1.6-1.5H16.7V5c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.6V11H7v3h2.7v8h3.8z"/></svg>
     </a>
-    <a class="social-btn" href="https://www.instagram.com/maarco_optyk/" target="_blank" aria-label="Instagram">
-      <svg class="social-ic" viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg>
+    <a class="social-btn" href="https://www.instagram.com/maarco_optyk/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg>
     </a>
-    <a class="social-btn" href="https://www.tiktok.com/@maarco.optyk" target="_blank" aria-label="TikTok">
-      <svg class="social-ic" viewBox="0 0 24 24"><path d="M16.5 3c.4 2.4 2 3.9 4.5 4.1v2.7c-1.8 0-3.4-.6-4.5-1.5v6.6a6.2 6.2 0 1 1-5.7-6.2v2.9a3.4 3.4 0 1 0 2.6 3.3V3h3.1z"/></svg>
+    <a class="social-btn" href="https://www.tiktok.com/@maarco.optyk" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.4 2.4 2 3.9 4.5 4.1v2.7c-1.8 0-3.4-.6-4.5-1.5v6.6a6.2 6.2 0 1 1-5.7-6.2v2.9a3.4 3.4 0 1 0 2.6 3.3V3h3.1z"/></svg>
     </a>
   </div>
 </header>
 
 <main>
 
-<section id="onas" class="section"><div class="section-card"><h2>O nas</h2></div></section>
-<section id="oferta" class="section"><div class="section-card"><h2>Oferta</h2></div></section>
-<section id="badania" class="section"><div class="section-card"><h2>Badania wzroku</h2></div></section>
-<section id="galeria" class="section"><div class="section-card"><h2>Galeria</h2></div></section>
-<section id="blog" class="section"><div class="section-card"><h2>Blog</h2></div></section>
+  <!-- HERO (H1 + lokalne SEO) -->
+  <section class="hero" aria-label="Maarco Optyk Lędziny – optyk i badanie wzroku">
+    <h1>Optyk Lędziny – Maarco Optyk: okulary, badanie wzroku, soczewki</h1>
+    <p>
+      Okulary korekcyjne i przeciwsłoneczne, soczewki kontaktowe oraz dobór szkieł: progresywne, dwugoniskowe i fotochromatyczne.
+      Profesjonalne doradztwo, serwis i naprawy okularów oraz własna szlifiernia optyczna na miejscu.
+    </p>
+  </section>
 
-<section id="kontakt" class="section">
-  <div class="section-card contact-grid">
-    <div>
-      <h2>Kontakt</h2>
-      <p><strong>Maarco Optyk</strong><br>ul. Lędzińska 14<br>43-143 Lędziny</p>
-      <p>
-        📞 <a href="tel:+48885020020">885 020 020</a><br>
-        📞 <a href="tel:+48323266409">(32) 326 64 09</a><br>
-        ✉️ <a href="mailto:maarco.optyk@gmail.com">maarco.optyk@gmail.com</a>
-      </p>
+  <!-- O NAS -->
+  <section id="onas" class="section">
+    <div class="section-card">
+      <h2>O nas</h2>
+      <p><!-- TU EDYTUJ: krótko o salonie, podejściu, doświadczeniu --></p>
+
+      <h3>Stylista okularowy i dobór opraw</h3>
+      <p><!-- TU EDYTUJ: jak pomagacie dobrać oprawy do twarzy i stylu --></p>
+
+      <h3>Własna profesjonalna szlifiernia optyczna</h3>
+      <p><!-- TU EDYTUJ: wykonujecie realizacje na miejscu dla klientów --></p>
     </div>
-    <div class="contact-map">
-      <iframe src="https://www.google.com/maps?q=Maarco+Optyk+L%C4%99dziny&output=embed"></iframe>
+  </section>
+
+  <!-- OFERTA -->
+  <section id="oferta" class="section">
+    <div class="section-card">
+      <h2>Oferta</h2>
+      <p><!-- TU EDYTUJ: 2–3 zdania wstępu o ofercie --></p>
+
+      <h3>Okulary korekcyjne</h3>
+      <p><!-- TU EDYTUJ --></p>
+
+      <h3>Okulary przeciwsłoneczne</h3>
+      <p><!-- TU EDYTUJ --></p>
+
+      <h3>Okulary dla dzieci</h3>
+      <p><!-- TU EDYTUJ --></p>
+
+      <h3>Soczewki kontaktowe</h3>
+      <p><!-- TU EDYTUJ --></p>
+
+      <h3>Akcesoria optyczne</h3>
+      <p><!-- TU EDYTUJ --></p>
+
+      <h3>Serwis i naprawy okularów</h3>
+      <p><!-- TU EDYTUJ --></p>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- BADANIA -->
+  <section id="badania" class="section">
+    <div class="section-card">
+      <h2>Badania wzroku</h2>
+      <p><!-- TU EDYTUJ: jak wygląda badanie, umawianie, czas, dla kogo --></p>
+
+      <h3>Badanie wzroku u optometrysty</h3>
+      <p><!-- TU EDYTUJ --></p>
+
+      <h3>Konsultacje okulistyczne (okulista)</h3>
+      <p><!-- TU EDYTUJ --></p>
+
+      <h3>Dobór szkieł: progresywne, dwugoniskowe, fotochromatyczne</h3>
+      <p><!-- TU EDYTUJ --></p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="section">
+    <div class="section-card">
+      <h2>Galeria</h2>
+      <p><!-- TU EDYTUJ: opis + w przyszłości zdjęcia --></p>
+
+      <h3>Salon optyczny w Lędzinach</h3>
+      <p><!-- TU EDYTUJ --></p>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog" class="section">
+    <div class="section-card">
+      <h2>Blog</h2>
+      <p><!-- TU EDYTUJ: tematy porad (progresy, dzieci, soczewki, UV, komputer) --></p>
+
+      <h3>Szkła progresywne – kiedy warto?</h3>
+      <p><!-- TU EDYTUJ --></p>
+
+      <h3>Soczewki kontaktowe – dobór i pielęgnacja</h3>
+      <p><!-- TU EDYTUJ --></p>
+
+      <h3>Okulary dla dzieci – jak dobrać?</h3>
+      <p><!-- TU EDYTUJ --></p>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt" class="section" aria-label="Kontakt i mapa dojazdu">
+    <div class="section-card contact-grid">
+      <div>
+        <h2>Kontakt</h2>
+
+        <h3>Adres i telefon</h3>
+        <p><strong>Maarco Optyk</strong><br>ul. Lędzińska 14<br>43-143 Lędziny</p>
+
+        <p>
+          📞 <a href="tel:+48885020020">885 020 020</a><br>
+          📞 <a href="tel:+48323266409">(32) 326 64 09</a><br>
+          ✉️ <a href="mailto:maarco.optyk@gmail.com">maarco.optyk@gmail.com</a>
+        </p>
+
+        <p>
+          <a class="cta-call" href="tel:+48885020020">Zadzwoń teraz</a>
+          <a class="cta-map" href="https://www.google.com/maps/dir/?api=1&destination=Maarco+Optyk+Lędziny" target="_blank" rel="noopener">Nawiguj do salonu</a>
+        </p>
+      </div>
+
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps?q=Maarco+Optyk+L%C4%99dziny&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+          title="Mapa dojazdu – Maarco Optyk Lędziny"></iframe>
+      </div>
+    </div>
+  </section>
 
 </main>
 
@@ -105,6 +212,6 @@
   </div>
 </footer>
 
-
+<script src="menu.js?v=300"></script>
 </body>
 </html>
