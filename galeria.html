@@ -32,16 +32,24 @@
     <a class="cta-map" href="https://www.google.com/maps/dir/?api=1&destination=Maarco+Optyk+Lędziny" target="_blank" rel="noopener">Nawiguj</a>
   </div>
 
-  <!-- SOCIAL HEADER -->
+  <!-- SOCIAL HEADER (spójne SVG jak w stopce) -->
   <div class="header-social" aria-label="Social media">
     <a class="social-btn" href="https://www.facebook.com/MaarcoOptyk" target="_blank" rel="noopener" aria-label="Facebook">
-      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.1c0-.9.3-1.5 1.6-1.5H16.7V5c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.6V11H7v3h2.7v8h3.8z"/></svg>
+      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2.5v3H15c-.5 0-1 .4-1 1v2h2.5l-.5 3H14v7A10 10 0 0 0 22 12z"/>
+      </svg>
     </a>
+
     <a class="social-btn" href="https://www.instagram.com/maarco_optyk/" target="_blank" rel="noopener" aria-label="Instagram">
-      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2z"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg>
+      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+      </svg>
     </a>
+
     <a class="social-btn" href="https://www.tiktok.com/@maarco.optyk" target="_blank" rel="noopener" aria-label="TikTok">
-      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.4 2.4 2 3.9 4.5 4.1v2.7c-1.8 0-3.4-.6-4.5-1.5v6.6a6.2 6.2 0 1 1-5.7-6.2v2.9a3.4 3.4 0 1 0 2.6 3.3V3h3.1z"/></svg>
+      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 8.5c-1.6 0-3.1-.5-4.3-1.4v8.2a6.3 6.3 0 1 1-5.6-6.3v3.3a3 3 0 1 0 2.3 2.9V2h3.3c.2 1.3.9 2.6 2 3.4.8.6 1.8.9 2.8.9V8.5z"/>
+      </svg>
     </a>
   </div>
 </header>
@@ -51,32 +59,60 @@
   <!-- HERO (H1) -->
   <section class="hero" aria-label="Galeria – Maarco Optyk Lędziny">
     <h1>Galeria – Maarco Optyk w Lędzinach</h1>
-    <p><!-- TU EDYTUJ: 1–2 zdania: co pokazujesz (salon, oprawy, realizacje) --></p>
+    <p>Zdjęcia z naszego salonu, przykładowe realizacje oraz oprawy okularowe dostępne na miejscu.</p>
   </section>
 
-  <!-- TREŚĆ (H2/H3 pod SEO) -->
+  <!-- OPIS + GALERIA -->
   <section class="section">
     <div class="section-card">
       <h2>Salon optyczny i oprawy okularowe</h2>
-      <p><!-- TU EDYTUJ: krótko o wnętrzu, ekspozycji opraw, doradztwie --></p>
+      <p>Zapraszamy do obejrzenia wnętrza salonu, ekspozycji opraw oraz wybranych realizacji. Na miejscu pomożemy dobrać okulary korekcyjne, przeciwsłoneczne i rozwiązania dla dzieci.</p>
 
-      <h3>Okulary korekcyjne – przykładowe realizacje</h3>
-      <p><!-- TU EDYTUJ: wstawisz zdjęcia realizacji / klientów (jeśli możesz) --></p>
+      <h3>Zdjęcia z salonu i realizacje</h3>
 
-      <h3>Okulary przeciwsłoneczne – kolekcje i nowości</h3>
-      <p><!-- TU EDYTUJ --></p>
+      <!-- SIATKA ZDJĘĆ (podmień src/alt na swoje) -->
+      <div class="gallery-grid" id="gallery">
+        <!-- PRZYKŁADY / PLACEHOLDERY -->
+        <button class="gallery-item" type="button"
+                data-full="img/galeria-1.jpg"
+                aria-label="Otwórz zdjęcie: Wnętrze salonu">
+          <img src="img/galeria-1.jpg" alt="Wnętrze salonu Maarco Optyk w Lędzinach" loading="lazy">
+        </button>
 
-      <h3>Okulary dla dzieci</h3>
-      <p><!-- TU EDYTUJ --></p>
+        <button class="gallery-item" type="button"
+                data-full="img/galeria-2.jpg"
+                aria-label="Otwórz zdjęcie: Ekspozycja opraw">
+          <img src="img/galeria-2.jpg" alt="Ekspozycja opraw okularowych w salonie" loading="lazy">
+        </button>
 
-      <!-- Opcjonalnie: miejsce na zdjęcia -->
-      <!--
-      <div class="gallery-grid">
-        <img src="img/galeria-1.jpg" alt="Opis zdjęcia 1">
-        <img src="img/galeria-2.jpg" alt="Opis zdjęcia 2">
-        <img src="img/galeria-3.jpg" alt="Opis zdjęcia 3">
+        <button class="gallery-item" type="button"
+                data-full="img/galeria-3.jpg"
+                aria-label="Otwórz zdjęcie: Okulary korekcyjne – realizacja">
+          <img src="img/galeria-3.jpg" alt="Przykładowa realizacja – okulary korekcyjne" loading="lazy">
+        </button>
+
+        <button class="gallery-item" type="button"
+                data-full="img/galeria-4.jpg"
+                aria-label="Otwórz zdjęcie: Okulary przeciwsłoneczne – kolekcja">
+          <img src="img/galeria-4.jpg" alt="Okulary przeciwsłoneczne – kolekcje i nowości" loading="lazy">
+        </button>
+
+        <button class="gallery-item" type="button"
+                data-full="img/galeria-5.jpg"
+                aria-label="Otwórz zdjęcie: Okulary dla dzieci">
+          <img src="img/galeria-5.jpg" alt="Okulary dla dzieci – oprawy i dopasowanie" loading="lazy">
+        </button>
+
+        <button class="gallery-item" type="button"
+                data-full="img/galeria-6.jpg"
+                aria-label="Otwórz zdjęcie: Serwis i dopasowanie okularów">
+          <img src="img/galeria-6.jpg" alt="Serwis i dopasowanie okularów w salonie" loading="lazy">
+        </button>
       </div>
-      -->
+
+      <p style="margin-top:14px; color: var(--muted);">
+        Wskazówka: wrzuć swoje zdjęcia do folderu <strong>img/</strong> i podmień nazwy plików powyżej (np. galeria-1.jpg).
+      </p>
     </div>
   </section>
 
@@ -84,19 +120,27 @@
     <div class="section-card">
       <h2>Chcesz zobaczyć więcej?</h2>
       <p>Obserwuj nas w social media — regularnie dodajemy nowości i realizacje.</p>
-      <p>
+      <p style="display:flex; gap:10px; flex-wrap:wrap;">
         <a class="cta-map" href="https://www.google.com/maps/dir/?api=1&destination=Maarco+Optyk+Lędziny" target="_blank" rel="noopener">Nawiguj do salonu</a>
         <a class="cta-call" href="tel:+48885020020">Zadzwoń</a>
       </p>
     </div>
   </section>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" data-close></div>
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Podgląd zdjęcia">
+      <button class="lightbox-close" type="button" data-close aria-label="Zamknij">✕</button>
+      <img id="lightbox-img" src="" alt="">
+    </div>
+  </div>
+
 </main>
 
 <footer class="footer">
   <div class="footer-inner">
 
-    <!-- LEWA STRONA – DANE -->
     <div class="footer-info">
       <strong>Maarco Optyk</strong><br>
       ul. Lędzińska 14, Lędziny<br>
@@ -105,7 +149,6 @@
       <a href="tel:+48323266409">(32) 326 64 09</a>
     </div>
 
-    <!-- PRAWA STRONA – SOCIAL MEDIA -->
     <div class="footer-social" aria-label="Social media">
       <a href="https://www.facebook.com/MaarcoOptyk" target="_blank" rel="noopener" aria-label="Facebook">
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -130,5 +173,49 @@
 </footer>
 
 <script src="menu.js?v=300"></script>
+
+<!-- LIGHTBOX JS (na tej stronie) -->
+<script>
+  (function () {
+    const gallery = document.getElementById('gallery');
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+
+    if (!gallery || !lb || !lbImg) return;
+
+    function openLightbox(src, alt) {
+      lbImg.src = src;
+      lbImg.alt = alt || 'Zdjęcie z galerii';
+      lb.setAttribute('aria-hidden', 'false');
+      lb.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lb.classList.remove('is-open');
+      lb.setAttribute('aria-hidden', 'true');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    gallery.addEventListener('click', (e) => {
+      const btn = e.target.closest('.gallery-item');
+      if (!btn) return;
+      const img = btn.querySelector('img');
+      const full = btn.getAttribute('data-full') || (img ? img.src : '');
+      const alt = img ? img.alt : '';
+      if (full) openLightbox(full, alt);
+    });
+
+    lb.addEventListener('click', (e) => {
+      if (e.target.matches('[data-close]')) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lb.classList.contains('is-open')) closeLightbox();
+    });
+  })();
+</script>
+
 </body>
 </html>
