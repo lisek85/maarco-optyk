@@ -79,10 +79,8 @@ main {
   gap: 14px;
   padding: 10px 14px;
 
-  /* FIX: nie łam elementów w pionie przez social */
   flex-wrap: nowrap;
 
-  /* delikatny premium blur (tam gdzie działa) */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -164,7 +162,7 @@ main {
 }
 
 /* =====================================================
-   HERO / SLIDER
+   HERO
    ===================================================== */
 .hero {
   padding: 26px 18px;
@@ -175,6 +173,65 @@ main {
     color-mix(in srgb, var(--surface) 92%, var(--bg))
   );
   border: 1px solid var(--border);
+}
+
+/* =====================================================
+   HERO VIDEO (baner wideo)
+   ===================================================== */
+.hero-video{
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  min-height: 360px;
+  padding: 0; /* nadpisuje padding z .hero */
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 24px var(--shadow);
+}
+
+.hero-video-el{
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px;
+  background: linear-gradient(
+    90deg,
+    rgba(5,26,66,.65),
+    rgba(5,26,66,.20)
+  );
+  color: #fff;
+}
+
+.hero-overlay h1{
+  margin: 0 0 8px;
+  font-size: clamp(26px, 4vw, 46px);
+  line-height: 1.1;
+}
+
+.hero-overlay p{
+  margin: 0 0 14px;
+  max-width: 520px;
+  color: rgba(255,255,255,.92);
+}
+
+.hero-actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 860px){
+  .hero-video{ min-height: 260px; }
+  .hero-video-el{ height: 260px; }
+  .hero-overlay{ padding: 18px; }
 }
 
 /* =====================================================
@@ -214,7 +271,6 @@ main {
   position: relative;
 }
 
-/* delikatny akcent „promocyjny” */
 .promo-card::before{
   content: "";
   position: absolute;
@@ -268,7 +324,6 @@ main {
   margin-top: 10px;
 }
 
-/* MAPA */
 .contact-map {
   border-radius: 18px;
   overflow: hidden;
@@ -306,7 +361,6 @@ main {
   font-size: 14px;
 }
 
-/* LEWA STRONA – DANE (zalecane: owiń dane w <div class="footer-info">) */
 .footer-info {
   line-height: 1.6;
   min-width: 240px;
@@ -322,7 +376,6 @@ main {
 
 .footer-info a:hover { text-decoration: underline; }
 
-/* PRAWA STRONA – SOCIAL */
 .footer-social {
   display: flex;
   flex-direction: row;
@@ -335,8 +388,6 @@ main {
 /* =====================================================
    SOCIAL MEDIA – HEADER + FOOTER
    ===================================================== */
-
-/* HEADER SOCIAL */
 .header-social {
   display: inline-flex;
   flex-direction: row;
@@ -376,7 +427,6 @@ main {
   display: block;
 }
 
-/* FOOTER SOCIAL – wyraźne na ciemnym tle */
 .footer-social a,
 .footer-social .social-btn {
   width: 44px;
@@ -406,148 +456,6 @@ main {
   display: block;
 }
 
-/* =====================================================
-   MOBILE
-   ===================================================== */
-@media (max-width: 860px) {
-
-  .logo { height: 36px; }
-
-  /* nav */
-  .nav { display: none; }
-  .menu-toggle { display: inline-flex; }
-
-  /* CTA header chowamy na mobile */
-  .header-cta { display: none; }
-
-  /* social w headerze chowamy na mobile */
-  .header-social { display: none; }
-
-  .nav.is-open {
-    display: flex;
-    position: absolute;
-    left: 12px;
-    right: 12px;
-    top: 62px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 12px;
-    box-shadow: 0 16px 32px var(--shadow);
-    flex-direction: column;
-    gap: 6px;
-    z-index: 2000;
-  }
-
-  .nav.is-open a {
-    width: 100%;
-    padding: 12px;
-  }
-
-  /* CTA fixed */
-  .cta-map, .cta-call {
-    position: fixed;
-    left: 14px;
-    right: 14px;
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 1500;
-    box-shadow: 0 14px 30px var(--shadow);
-  }
-
-  .cta-map { bottom: 74px; }
-  .cta-call { bottom: 18px; }
-
-  body { padding-bottom: 150px; }
-
-  /* kontakt mobile */
-  .contact-grid { grid-template-columns: 1fr; }
-
-  /* stopka mobile */
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .footer-social {
-    width: 100%;
-    justify-content: flex-start;
-    margin-top: 12px;
-  }
-}
-
-/* =====================================================
-   SAFARI FIX
-   ===================================================== */
-@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-  .header { background: var(--surface); }
-}
-/* =====================================================
-   BLOG – kafle artykułów
-   (pasuje do blog.html: .blog-grid / .blog-card / .blog-link)
-   ===================================================== */
-
-.blog-grid{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 14px;
-}
-
-.blog-card{
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 16px;
-  box-shadow: 0 10px 24px var(--shadow);
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-}
-
-.blog-card:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 16px 34px color-mix(in srgb, var(--shadow) 90%, transparent);
-  border-color: color-mix(in srgb, var(--brand) 28%, var(--border));
-}
-
-.blog-card h3{
-  margin: 0 0 8px;
-  font-size: 18px;
-  color: var(--brand);
-  line-height: 1.25;
-}
-
-.blog-card p{
-  margin: 0 0 12px;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.blog-link{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 800;
-  color: var(--brand-hover);
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: color-mix(in srgb, var(--brand-soft) 26%, var(--surface));
-  border: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
-  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
-}
-
-.blog-link:hover{
-  text-decoration: none;
-  transform: translateY(-1px);
-  background: color-mix(in srgb, var(--brand-soft) 38%, var(--surface));
-  box-shadow: 0 10px 22px var(--shadow);
-}
-
-/* BLOG – mobile */
-@media (max-width: 860px){
-  .blog-grid{
-    grid-template-columns: 1fr;
-  }
-}
 /* =====================================================
    BLOG
    ===================================================== */
@@ -648,7 +556,177 @@ main {
 @media (max-width: 860px){
   .blog-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-
 @media (max-width: 520px){
   .blog-grid{ grid-template-columns: 1fr; }
+}
+
+/* =====================================================
+   GALERIA + LIGHTBOX
+   ===================================================== */
+.gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.gallery-item{
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 18px;
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  box-shadow: 0 10px 24px var(--shadow);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.gallery-item:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px var(--shadow);
+}
+
+.gallery-item img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 860px){
+  .gallery-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gallery-item img{ height: 170px; }
+}
+
+@media (max-width: 520px){
+  .gallery-grid{ grid-template-columns: 1fr; }
+  .gallery-item img{ height: 210px; }
+}
+
+/* LIGHTBOX */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 5000;
+}
+
+.lightbox.is-open{ display: block; }
+
+.lightbox-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+}
+
+.lightbox-dialog{
+  position: absolute;
+  inset: 20px;
+  margin: auto;
+  max-width: 1100px;
+  max-height: calc(100vh - 40px);
+  background: var(--surface);
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  overflow: hidden;
+}
+
+.lightbox-close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+#lightbox-img{
+  width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 40px);
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+@media (max-width: 860px) {
+
+  .logo { height: 36px; }
+
+  /* nav */
+  .nav { display: none; }
+  .menu-toggle { display: inline-flex; }
+
+  /* CTA header chowamy na mobile */
+  .header-cta { display: none; }
+
+  /* social w headerze chowamy na mobile */
+  .header-social { display: none; }
+
+  .nav.is-open {
+    display: flex;
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: 62px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 12px;
+    box-shadow: 0 16px 32px var(--shadow);
+    flex-direction: column;
+    gap: 6px;
+    z-index: 2000;
+  }
+
+  .nav.is-open a {
+    width: 100%;
+    padding: 12px;
+  }
+
+  /* CTA fixed */
+  .cta-map, .cta-call {
+    position: fixed;
+    left: 14px;
+    right: 14px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1500;
+    box-shadow: 0 14px 30px var(--shadow);
+  }
+
+  .cta-map { bottom: 74px; }
+  .cta-call { bottom: 18px; }
+
+  body { padding-bottom: 150px; }
+
+  /* kontakt mobile */
+  .contact-grid { grid-template-columns: 1fr; }
+
+  /* stopka mobile */
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-social {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 12px;
+  }
+}
+
+/* =====================================================
+   SAFARI FIX
+   ===================================================== */
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .header { background: var(--surface); }
 }
