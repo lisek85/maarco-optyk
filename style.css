@@ -1,118 +1,296 @@
+/* =====================================================
+   PALETA KOLORÓW – MAARCO OPTYK (okoloko vibe)
+   ===================================================== */
 :root{
-  --bg:#071820;
-  --bg2:#0b1f2a;
-  --card:#0f2a36;
-  --text:#eaf6ff;
-  --muted:#b9d3e3;
-  --accent:#41c3ff;
-  --accent2:#7be3ff;
-  --shadow:0 12px 30px rgba(0,0,0,.35);
-  --radius:18px;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:linear-gradient(180deg,var(--bg),#031017);
-  color:var(--text);
-  line-height:1.55;
-}
-a{color:inherit;text-decoration:none}
-.container{width:min(1120px,calc(100% - 36px));margin:0 auto}
+  --bg: #E6E6E6;
+  --surface: #ffffff;
 
-/* HEADER */
-.header{
-  position:sticky;top:0;z-index:20;
-  background:rgba(7,24,32,.78);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-.header__inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
-.brand{display:flex;flex-direction:column;gap:2px}
-.brand__name{font-weight:800;letter-spacing:.08em}
-.brand__sub{font-size:12px;color:var(--muted)}
-.nav{display:flex;gap:16px;font-weight:600;color:rgba(234,246,255,.9)}
-.nav a{padding:8px 10px;border-radius:12px}
-.nav a:hover{background:rgba(255,255,255,.06)}
-.header__cta{display:flex;gap:10px;align-items:center}
+  --text: #051A42;
+  --muted: rgba(5,26,66,.72);
 
-/* Buttons */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:10px 14px;border-radius:14px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#001018;font-weight:800;box-shadow:var(--shadow);border:0;cursor:pointer;min-height:42px;
-}
-.btn--lg{padding:12px 18px;border-radius:16px;min-height:48px}
-.btn--ghost{
-  background:rgba(255,255,255,.06);color:var(--text);box-shadow:none;
-  border:1px solid rgba(255,255,255,.12);
-}
-.btn--ghost:hover{background:rgba(255,255,255,.10)}
+  --brand: #051A42;
+  --brand-contrast: #ffffff;
+  --brand-hover: #004C59;
+  --brand-soft: #AAC8CB;
 
-/* Burger + Mobile */
-.burger{display:none;width:44px;height:44px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06)}
-.burger span{display:block;width:18px;height:2px;margin:5px auto;background:rgba(234,246,255,.95);border-radius:99px}
-.mobile-menu{border-top:1px solid rgba(255,255,255,.08);padding:10px 18px 16px;display:flex;flex-direction:column;gap:10px}
-.mobile-menu a{padding:12px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
-.mobile-menu__call{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#001018;font-weight:900}
+  --accent: #FFCF91;
 
-/* HERO VIDEO */
-.hero__media{position:relative;min-height:clamp(520px,70vh,760px);overflow:hidden;background:#000}
-.hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
-.hero__overlay{position:absolute;inset:0;background:radial-gradient(1200px 600px at 30% 30%,rgba(0,0,0,.35),rgba(0,0,0,.72))}
-.hero__content{position:relative;padding:64px 0 44px;max-width:720px}
-.badge{display:inline-flex;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);font-weight:800;margin-bottom:14px}
-.hero h1{margin:0 0 10px;font-size:clamp(34px,5vw,54px);line-height:1.08}
-.hero p{margin:0 0 18px;color:rgba(234,246,255,.88);font-size:16px}
-.hero__actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 10px}
+  --border: rgba(5,26,66,.12);
+  --shadow: rgba(5,26,66,.10);
 
-/* SECTIONS */
-.section{padding:56px 0}
-.section--alt{
-  background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.00));
-  border-top:1px solid rgba(255,255,255,.06);
-  border-bottom:1px solid rgba(255,255,255,.06);
+  --footer-bg: #051A42;
+  --footer-text: rgba(255,255,255,.92);
 }
-h2{margin:0 0 18px;font-size:28px}
-.lead{color:rgba(234,246,255,.86);max-width:720px}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}
-.grid--2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.card{
-  background:rgba(15,42,54,.78);border:1px solid rgba(255,255,255,.08);
-  border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
-}
-.card h3{margin:0 0 8px}
-.card p{margin:0;color:rgba(234,246,255,.84)}
-.list{margin:10px 0 0;padding-left:18px;color:rgba(234,246,255,.86)}
-.stack{display:flex;flex-direction:column;gap:10px;margin-top:12px}
-.muted{color:var(--muted);margin-top:4px}
-.contact{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-.contact a{color:var(--accent2);font-weight:800}
 
-/* MAP */
-.map{width:100%;min-height:260px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04)}
-.map__placeholder{display:flex;align-items:center;justify-content:center;height:260px;color:rgba(234,246,255,.70)}
+/* =====================================================
+   RESET / BAZA
+   ===================================================== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* =====================================================
+   LAYOUT
+   ===================================================== */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 22px 16px 40px;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border-bottom: 1px solid var(--border);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 14px;
+
+  flex-wrap: nowrap;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.brand { display: inline-flex; align-items: center; }
+.logo { height: 40px; width: auto; display: block; }
+
+.nav {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.nav a {
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.nav a:hover {
+  background: color-mix(in srgb, var(--brand) 8%, transparent);
+  text-decoration: none;
+}
+
+/* CTA */
+.header-cta {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.cta-call, .cta-map {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 14px;
+  border: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
+  background: var(--surface);
+  color: var(--text);
+  transition: .2s;
+}
+
+.cta-call {
+  background: var(--brand);
+  color: var(--brand-contrast);
+  border-color: var(--brand);
+}
+
+.cta-call:hover {
+  background: var(--brand-hover);
+}
+
+.cta-map:hover {
+  background: color-mix(in srgb, var(--brand-soft) 28%, var(--surface));
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  border: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+.hero {
+  padding: 26px 18px;
+  border-radius: 22px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--brand-soft) 35%, var(--surface)),
+    color-mix(in srgb, var(--surface) 92%, var(--bg))
+  );
+  border: 1px solid var(--border);
+}
+
+/* =====================================================
+   SEKCJE
+   ===================================================== */
+.section { margin-top: 22px; }
+
+.section-card {
+  padding: 22px;
+  border-radius: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 24px var(--shadow);
+}
+
+.section-card h2 {
+  margin-top: 0;
+  font-size: 22px;
+  color: var(--brand);
+}
+
+/* =====================================================
+   KONTAKT
+   ===================================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+}
+
+.contact-map {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  min-height: 260px;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  border-top: 1px solid rgba(255,255,255,.14);
+  margin-top: 30px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-info a {
+  color: #fff;
+  font-weight: 700;
+}
 
 /* SOCIAL */
-.social{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
-.social__btn{
-  width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;
-  border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);
+.header-social,
+.footer-social {
+  display: flex;
+  gap: 12px;
 }
-.social__btn svg{width:20px;height:20px;fill:rgba(234,246,255,.92)}
 
-/* FOOTER */
-.footer{padding:22px 0;border-top:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.18)}
-.footer__inner{display:flex;align-items:center;justify-content:space-between;gap:12px;color:rgba(234,246,255,.80)}
-.footer__links{display:flex;gap:12px}
-.footer__links a{padding:6px 10px;border-radius:12px}
-.footer__links a:hover{background:rgba(255,255,255,.06)}
+.header-social a,
+.footer-social a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/* Responsive */
-@media (max-width:920px){
-  .nav,.header__cta{display:none}
-  .burger{display:inline-block}
-  .grid,.grid--2{grid-template-columns:1fr}
-  .hero__content{padding:52px 0 34px}
+.header-social a {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--brand);
+}
+
+.footer-social a {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.4);
+  color: #fff;
+}
+
+.header-social svg,
+.footer-social svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+@media (max-width: 860px) {
+  .nav { display: none; }
+  .menu-toggle { display: inline-flex; }
+  .header-cta, .header-social { display: none; }
+
+  .nav.is-open {
+    display: flex;
+    position: absolute;
+    top: 62px;
+    left: 12px;
+    right: 12px;
+    flex-direction: column;
+    background: var(--surface);
+    border-radius: 18px;
+    padding: 12px;
+  }
+
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* =====================================================
+   SAFARI FIX
+   ===================================================== */
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .header { background: var(--surface); }
 }
