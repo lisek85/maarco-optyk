@@ -14,7 +14,6 @@
     <img src="logo.png" alt="Maarco Optyk" class="logo">
   </a>
 
-  <!-- ✅ DODANE: hamburger (żeby menu działało na mobile) -->
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
     ☰ <span class="sr-only">Menu</span>
   </button>
@@ -33,7 +32,6 @@
     <a class="cta-map" href="https://www.google.com/maps/dir/?api=1&destination=Maarco+Optyk+Lędziny" target="_blank" rel="noopener">Nawiguj</a>
   </div>
 
-  <!-- SOCIAL HEADER -->
   <div class="header-social" aria-label="Social media">
     <a class="social-btn" href="https://www.facebook.com/MaarcoOptyk" target="_blank" rel="noopener" aria-label="Facebook">
       <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true">
@@ -57,6 +55,24 @@
 
 <main>
 
+  <!-- HERO VIDEO (wideo z FTP: /video/wyprzedaz-okularow.mp4) -->
+  <section class="hero hero-video" aria-label="Baner wideo">
+    <video class="hero-video-el" autoplay muted loop playsinline preload="metadata">
+      <source src="video/wyprzedaz-okularow.mp4" type="video/mp4">
+      Twoja przeglądarka nie obsługuje wideo.
+    </video>
+
+    <!-- Overlay tekstu (SEO + czytelność) -->
+    <div class="hero-overlay">
+      <h1>Wyprzedaż okularów przeciwsłonecznych</h1>
+      <p>Styl • Ochrona UV • Duży wybór w salonie</p>
+      <div class="hero-actions">
+        <a class="cta-call" href="tel:+48885020020">Zadzwoń</a>
+        <a class="cta-map" href="https://www.google.com/maps/dir/?api=1&destination=Maarco+Optyk+Lędziny" target="_blank" rel="noopener">Nawiguj</a>
+      </div>
+    </div>
+  </section>
+
   <section id="onas" class="section">
     <div class="section-card"><h2>O nas</h2></div>
   </section>
@@ -77,7 +93,7 @@
     <div class="section-card"><h2>Blog</h2></div>
   </section>
 
-  <section id="kontakt" class="section">
+  <section id="kontakt" class="section" aria-label="Kontakt i mapa dojazdu">
     <div class="section-card contact-grid">
       <div>
         <h2>Kontakt</h2>
@@ -133,7 +149,6 @@
   </div>
 </footer>
 
-<!-- ✅ DODANE: żeby hamburger działał -->
 <script src="menu.js?v=300"></script>
 </body>
 </html>
