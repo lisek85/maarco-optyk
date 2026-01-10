@@ -1,333 +1,146 @@
-/* =====================================================
-   PALETA KOLORÓW – MAARCO OPTYK (okoloko vibe)
-   ===================================================== */
-:root{
-  --bg: #E6E6E6;
-  --surface: #ffffff;
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maarco Optyk Lędziny – okulary i badania wzroku</title>
+  <meta name="description" content="Maarco Optyk Lędziny – okulary korekcyjne, przeciwsłoneczne, soczewki kontaktowe, badania wzroku." />
+  <link rel="stylesheet" href="style.css?v=401" />
+</head>
+<body>
 
-  --text: #051A42;
-  --muted: rgba(5,26,66,.72);
+<header class="header">
+  <a class="brand" href="index.html" aria-label="Strona główna">
+    <img src="logo.png" alt="Maarco Optyk" class="logo">
+  </a>
 
-  --brand: #051A42;
-  --brand-contrast: #ffffff;
-  --brand-hover: #004C59;
-  --brand-soft: #AAC8CB;
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+    ☰ <span class="sr-only">Menu</span>
+  </button>
 
-  --accent: #FFCF91;
+  <nav id="site-nav" class="nav" aria-label="Główna nawigacja">
+    <a href="#onas">O nas</a>
+    <a href="#oferta">Oferta</a>
+    <a href="#badania">Badania wzroku</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#blog">Blog</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
 
-  --border: rgba(5,26,66,.12);
-  --shadow: rgba(5,26,66,.10);
+  <div class="header-cta">
+    <a class="cta-call" href="tel:+48885020020">Zadzwoń</a>
+    <a class="cta-map" href="https://www.google.com/maps/dir/?api=1&destination=Maarco+Optyk+Lędziny" target="_blank" rel="noopener">Nawiguj</a>
+  </div>
 
-  --footer-bg: #051A42;
-  --footer-text: rgba(255,255,255,.92);
-}
+  <div class="header-social" aria-label="Social media">
+    <a class="social-btn" href="https://www.facebook.com/MaarcoOptyk" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2.5v3H15c-.5 0-1 .4-1 1v2h2.5l-.5 3H14v7A10 10 0 0 0 22 12z"/>
+      </svg>
+    </a>
 
-/* =====================================================
-   RESET / BAZA
-   ===================================================== */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+    <a class="social-btn" href="https://www.instagram.com/maarco_optyk/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+      </svg>
+    </a>
 
-body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  line-height: 1.55;
-  color: var(--text);
-  background: var(--bg);
-}
+    <a class="social-btn" href="https://www.tiktok.com/@maarco.optyk" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 8.5c-1.6 0-3.1-.5-4.3-1.4v8.2a6.3 6.3 0 1 1-5.6-6.3v3.3a3 3 0 1 0 2.3 2.9V2h3.3c.2 1.3.9 2.6 2 3.4.8.6 1.8.9 2.8.9V8.5z"/>
+      </svg>
+    </a>
+  </div>
+</header>
 
-a { color: inherit; text-decoration: none; }
-a:hover { text-decoration: underline; }
+<main>
 
-.sr-only {
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap; border: 0;
-}
+  <!-- HERO VIDEO (bez tekstu z HTML, film w pełnym rozmiarze) -->
+  <section class="hero hero--video" aria-label="Promocja okularów">
+    <div class="hero-video">
+      <video class="hero-video__media" autoplay muted loop playsinline webkit-playsinline preload="metadata">
+        <source src="./video/promo-fixed.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay" aria-hidden="true"></div>
+    </div>
+  </section>
 
-/* =====================================================
-   LAYOUT
-   ===================================================== */
-main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 22px 16px 40px;
-}
+  <section id="onas" class="section">
+    <div class="section-card"><h2>O nas</h2></div>
+  </section>
 
-/* =====================================================
-   HEADER
-   ===================================================== */
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: color-mix(in srgb, var(--surface) 92%, transparent);
-  border-bottom: 1px solid var(--border);
+  <section id="oferta" class="section">
+    <div class="section-card"><h2>Oferta</h2></div>
+  </section>
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 10px 14px;
+  <section id="badania" class="section">
+    <div class="section-card"><h2>Badania wzroku</h2></div>
+  </section>
 
-  flex-wrap: nowrap;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
+  <section id="galeria" class="section">
+    <div class="section-card"><h2>Galeria</h2></div>
+  </section>
 
-.brand { display: inline-flex; align-items: center; }
-.logo { height: 40px; width: auto; display: block; }
+  <section id="blog" class="section">
+    <div class="section-card"><h2>Blog</h2></div>
+  </section>
 
-.nav {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
+  <section id="kontakt" class="section">
+    <div class="section-card contact-grid">
+      <div>
+        <h2>Kontakt</h2>
+        <p><strong>Maarco Optyk</strong><br>ul. Lędzińska 14<br>43-143 Lędziny</p>
+        <p>
+          📞 <a href="tel:+48885020020">885 020 020</a><br>
+          📞 <a href="tel:+48323266409">(32) 326 64 09</a><br>
+          ✉️ <a href="mailto:maarco.optyk@gmail.com">maarco.optyk@gmail.com</a>
+        </p>
+      </div>
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps?q=Maarco+Optyk+L%C4%99dziny&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa dojazdu – Maarco Optyk Lędziny">
+        </iframe>
+      </div>
+    </div>
+  </section>
 
-.nav a {
-  font-weight: 700;
-  font-size: 14px;
-  padding: 8px 10px;
-  border-radius: 10px;
-}
+</main>
 
-.nav a:hover {
-  background: color-mix(in srgb, var(--brand) 8%, transparent);
-  text-decoration: none;
-}
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-info">
+      <strong>Maarco Optyk</strong><br>
+      ul. Lędzińska 14, Lędziny<br>
+      Tel:
+      <a href="tel:+48885020020">885 020 020</a> |
+      <a href="tel:+48323266409">(32) 326 64 09</a>
+    </div>
 
-/* CTA */
-.header-cta {
-  display: inline-flex;
-  gap: 10px;
-  align-items: center;
-}
+    <div class="footer-social" aria-label="Social media">
+      <a href="https://www.facebook.com/MaarcoOptyk" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2.5v3H15c-.5 0-1 .4-1 1v2h2.5l-.5 3H14v7A10 10 0 0 0 22 12z"/>
+        </svg>
+      </a>
 
-.cta-call, .cta-map {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 14px;
-  border-radius: 14px;
-  font-weight: 800;
-  font-size: 14px;
-  border: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
-  background: var(--surface);
-  color: var(--text);
-  transition: .2s;
-}
+      <a href="https://www.instagram.com/maarco_optyk/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+        </svg>
+      </a>
 
-.cta-call {
-  background: var(--brand);
-  color: var(--brand-contrast);
-  border-color: var(--brand);
-}
+      <a href="https://www.tiktok.com/@maarco.optyk" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 8.5c-1.6 0-3.1-.5-4.3-1.4v8.2a6.3 6.3 0 1 1-5.6-6.3v3.3a3 3 0 1 0 2.3 2.9V2h3.3c.2 1.3.9 2.6 2 3.4.8.6 1.8.9 2.8.9V8.5z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
 
-.cta-call:hover { background: var(--brand-hover); }
-
-.cta-map:hover {
-  background: color-mix(in srgb, var(--brand-soft) 28%, var(--surface));
-}
-
-/* HAMBURGER */
-.menu-toggle {
-  display: none;
-  border: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
-  background: var(--surface);
-  border-radius: 12px;
-  padding: 10px 12px;
-  font-weight: 900;
-  cursor: pointer;
-}
-
-/* =====================================================
-   HERO
-   ===================================================== */
-.hero {
-  padding: 26px 18px;
-  border-radius: 22px;
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--brand-soft) 35%, var(--surface)),
-    color-mix(in srgb, var(--surface) 92%, var(--bg))
-  );
-  border: 1px solid var(--border);
-}
-
-/* =====================================================
-   HERO VIDEO – FINAL (bez pasów)
-   ===================================================== */
-.hero--video { padding: 0; }
-
-.hero--video .hero-video{
-  position: relative;
-  width: 100%;
-  height: min(70vh, 560px);
-  border-radius: 22px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: #000;
-}
-
-.hero-video__media{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-
-  object-fit: cover;        /* brak pasów */
-  object-position: 50% 12%; /* pokazuje napisy z góry */
-
-  -webkit-transform: translateZ(0); /* Safari iOS fix */
-}
-
-.hero-overlay{
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.12));
-  pointer-events: none;
-}
-
-/* =====================================================
-   SEKCJE
-   ===================================================== */
-.section { margin-top: 22px; }
-
-.section-card {
-  padding: 22px;
-  border-radius: 22px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 24px var(--shadow);
-}
-
-.section-card h2 {
-  margin-top: 0;
-  font-size: 22px;
-  color: var(--brand);
-}
-
-/* =====================================================
-   KONTAKT
-   ===================================================== */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 18px;
-}
-
-.contact-map {
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  min-height: 260px;
-}
-
-.contact-map iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* =====================================================
-   FOOTER
-   ===================================================== */
-.footer {
-  background: var(--footer-bg);
-  color: var(--footer-text);
-  border-top: 1px solid rgba(255,255,255,.14);
-  margin-top: 30px;
-}
-
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-info a {
-  color: #fff;
-  font-weight: 700;
-}
-
-/* SOCIAL */
-.header-social,
-.footer-social {
-  display: flex;
-  gap: 12px;
-}
-
-.header-social a,
-.footer-social a {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header-social a {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--brand);
-}
-
-.footer-social a {
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.4);
-  color: #fff;
-}
-
-.header-social svg,
-.footer-social svg {
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
-}
-
-/* =====================================================
-   MOBILE
-   ===================================================== */
-@media (max-width: 860px) {
-  .nav { display: none; }
-  .menu-toggle { display: inline-flex; }
-  .header-cta, .header-social { display: none; }
-
-  .nav.is-open {
-    display: flex;
-    position: absolute;
-    top: 62px;
-    left: 12px;
-    right: 12px;
-    flex-direction: column;
-    background: var(--surface);
-    border-radius: 18px;
-    padding: 12px;
-  }
-
-  .hero--video .hero-video{
-    height: min(42vh, 360px);
-  }
-
-  .contact-grid { grid-template-columns: 1fr; }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-}
-
-/* =====================================================
-   SAFARI FALLBACK
-   ===================================================== */
-@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-  .header { background: var(--surface); }
-}
+<script src="menu.js?v=401"></script>
+</body>
+</html>
