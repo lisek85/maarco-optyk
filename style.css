@@ -296,28 +296,31 @@ main {
 }
 
 /* =====================================================
-   HERO VIDEO (desktop + mobile) – DODANE (nie rusza reszty)
+   HERO VIDEO (desktop + mobile) – poprawione: bez czarnego pasa
    ===================================================== */
 .hero--video { padding: 0; }
 
+/* kontener wideo ma stałą wysokość jak dawniej */
 .hero--video .hero-video{
   position: relative;
   width: 100%;
+  height: min(70vh, 560px);
   border-radius: 22px;
   overflow: hidden;
   border: 1px solid var(--border);
   background: #000;
 }
 
+/* wideo zawsze wypełnia kontener */
 .hero-video__media{
   width: 100%;
+  height: 100%;
   display: block;
-  object-fit: contain; /* desktop bez cropa */
 }
 
-/* desktop wysokość */
+/* desktop: wypełnij bez pasów (może lekko przyciąć) */
 .hero-video__desktop{
-  height: min(70vh, 560px);
+  object-fit: cover;
 }
 
 /* mobile ukryte domyślnie */
@@ -325,7 +328,7 @@ main {
   display: none;
 }
 
-/* overlay (możesz zostawić, prawie niewidoczny) */
+/* overlay delikatny */
 .hero-overlay{
   position: absolute;
   inset: 0;
@@ -333,17 +336,21 @@ main {
   pointer-events: none;
 }
 
-/* mobile: pokazujemy pionowe wideo i dopasowujemy height */
+/* mobile: pokazujemy pionowe wideo i dopasowujemy wysokość */
 @media (max-width: 860px){
+  .hero--video .hero-video{
+    height: min(58vh, 520px);
+  }
+
   .hero-video__desktop{ display: none; }
+
   .hero-video__mobile{
     display: block;
-    height: min(58vh, 520px);
-    object-fit: cover; /* pionowe wypełnia hero bez pasów */
+    object-fit: cover; /* pionowe wypełnia bez pasów */
   }
 }
 
-/* oszczędzanie / reduce motion: nie odtwarzaj wideo (Safari friendly) */
+/* oszczędzanie / reduce motion: nie odtwarzaj wideo */
 @media (prefers-reduced-motion: reduce){
   .hero-video__desktop,
   .hero-video__mobile{
