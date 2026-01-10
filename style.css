@@ -1,5 +1,5 @@
 /* =====================================================
-   PALETA KOLORÓW – MAARCO OPTYK
+   PALETA KOLORÓW – MAARCO OPTYK (okoloko vibe)
    ===================================================== */
 :root{
   --bg: #E6E6E6;
@@ -125,7 +125,9 @@ main {
   border-color: var(--brand);
 }
 
-.cta-call:hover { background: var(--brand-hover); }
+.cta-call:hover {
+  background: var(--brand-hover);
+}
 
 .cta-map:hover {
   background: color-mix(in srgb, var(--brand-soft) 28%, var(--surface));
@@ -154,26 +156,6 @@ main {
     color-mix(in srgb, var(--surface) 92%, var(--bg))
   );
   border: 1px solid var(--border);
-}
-
-.hero-video {
-  position: relative;
-  border-radius: 22px;
-  overflow: hidden;
-  background: #000;
-}
-
-.hero-video__media {
-  width: 100%;
-  height: min(52vh, 420px);
-  object-fit: cover; /* DESKTOP */
-  display: block;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
 }
 
 /* =====================================================
@@ -278,7 +260,7 @@ main {
 }
 
 /* =====================================================
-   MOBILE – iPhone / Safari (KLUCZOWA ZMIANA)
+   MOBILE
    ===================================================== */
 @media (max-width: 860px) {
   .nav { display: none; }
@@ -304,13 +286,6 @@ main {
     align-items: flex-start;
     gap: 12px;
   }
-
-  /* 👉 NA IPHONE: CAŁE WIDEO, BEZ PRZYCINANIA NAPISÓW */
-  .hero-video__media{
-    height: min(52vh, 360px);
-    object-fit: contain;
-    background: #000;
-  }
 }
 
 /* =====================================================
@@ -318,4 +293,60 @@ main {
    ===================================================== */
 @supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
   .header { background: var(--surface); }
+}
+
+/* =====================================================
+   HERO VIDEO (desktop + mobile) – DODANE (nie rusza reszty)
+   ===================================================== */
+.hero--video { padding: 0; }
+
+.hero--video .hero-video{
+  position: relative;
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+}
+
+.hero-video__media{
+  width: 100%;
+  display: block;
+  object-fit: contain; /* desktop bez cropa */
+}
+
+/* desktop wysokość */
+.hero-video__desktop{
+  height: min(70vh, 560px);
+}
+
+/* mobile ukryte domyślnie */
+.hero-video__mobile{
+  display: none;
+}
+
+/* overlay (możesz zostawić, prawie niewidoczny) */
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.12));
+  pointer-events: none;
+}
+
+/* mobile: pokazujemy pionowe wideo i dopasowujemy height */
+@media (max-width: 860px){
+  .hero-video__desktop{ display: none; }
+  .hero-video__mobile{
+    display: block;
+    height: min(58vh, 520px);
+    object-fit: cover; /* pionowe wypełnia hero bez pasów */
+  }
+}
+
+/* oszczędzanie / reduce motion: nie odtwarzaj wideo (Safari friendly) */
+@media (prefers-reduced-motion: reduce){
+  .hero-video__desktop,
+  .hero-video__mobile{
+    display: none;
+  }
 }
