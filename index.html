@@ -55,21 +55,24 @@
 
 <main>
 
-  <!-- HERO VIDEO – z posterem (mobile szybciej), bez napisów -->
-  <section class="hero hero--video" aria-label="Wyprzedaż okularów">
+  <!-- HERO VIDEO: desktop + mobile -->
+  <section class="hero hero--video" aria-label="Promocja">
     <div class="hero-video">
-      <video
-        class="hero-video__media"
-        autoplay
-        muted
-        loop
-        playsinline
-        webkit-playsinline
-        preload="none"
-        poster="./video/poster.jpg"
-      >
+
+      <!-- DESKTOP (poziome) -->
+      <video class="hero-video__media hero-video__desktop"
+        autoplay muted loop playsinline webkit-playsinline
+        preload="none">
         <source src="./video/promo-fixed.mp4" type="video/mp4" />
       </video>
+
+      <!-- MOBILE (pionowe 9:16) -->
+      <video class="hero-video__media hero-video__mobile"
+        autoplay muted loop playsinline webkit-playsinline
+        preload="none">
+        <source src="./video/promo-mobile.mp4" type="video/mp4" />
+      </video>
+
       <div class="hero-overlay" aria-hidden="true"></div>
     </div>
   </section>
