@@ -345,4 +345,4 @@ main {
 @media (max-width: 860px){
   .hero-video__media{ height: min(52vh, 420px); }
 }
-.hero-content { display: none; }
+
