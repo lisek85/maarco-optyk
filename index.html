@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maarco Optyk Lędziny – okulary i badania wzroku</title>
   <meta name="description" content="Maarco Optyk Lędziny – okulary korekcyjne, przeciwsłoneczne, soczewki kontaktowe, badania wzroku." />
-  <link rel="stylesheet" href="style.css?v=301" />
+  <link rel="stylesheet" href="style.css?v=400" />
 </head>
 <body>
 
 <header class="header">
-  <a class="brand" href="index.html" aria-label="Strona główna">
+  <a class="brand" href="index.html">
     <img src="logo.png" alt="Maarco Optyk" class="logo">
   </a>
 
@@ -18,7 +18,7 @@
     ☰ <span class="sr-only">Menu</span>
   </button>
 
-  <nav id="site-nav" class="nav" aria-label="Główna nawigacja">
+  <nav id="site-nav" class="nav">
     <a href="#onas">O nas</a>
     <a href="#oferta">Oferta</a>
     <a href="#badania">Badania wzroku</a>
@@ -29,131 +29,56 @@
 
   <div class="header-cta">
     <a class="cta-call" href="tel:+48885020020">Zadzwoń</a>
-    <a class="cta-map" href="https://www.google.com/maps/dir/?api=1&destination=Maarco+Optyk+Lędziny" target="_blank" rel="noopener">Nawiguj</a>
-  </div>
-
-  <div class="header-social" aria-label="Social media">
-    <a class="social-btn" href="https://www.facebook.com/MaarcoOptyk" target="_blank" rel="noopener" aria-label="Facebook">
-      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2.5v3H15c-.5 0-1 .4-1 1v2h2.5l-.5 3H14v7A10 10 0 0 0 22 12z"/>
-      </svg>
-    </a>
-
-    <a class="social-btn" href="https://www.instagram.com/maarco_optyk/" target="_blank" rel="noopener" aria-label="Instagram">
-      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-      </svg>
-    </a>
-
-    <a class="social-btn" href="https://www.tiktok.com/@maarco.optyk" target="_blank" rel="noopener" aria-label="TikTok">
-      <svg class="social-ic" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M21 8.5c-1.6 0-3.1-.5-4.3-1.4v8.2a6.3 6.3 0 1 1-5.6-6.3v3.3a3 3 0 1 0 2.3 2.9V2h3.3c.2 1.3.9 2.6 2 3.4.8.6 1.8.9 2.8.9V8.5z"/>
-      </svg>
-    </a>
+    <a class="cta-map" href="https://www.google.com/maps/dir/?api=1&destination=Maarco+Optyk+Lędziny" target="_blank">Nawiguj</a>
   </div>
 </header>
 
 <main>
 
-  <!-- HERO VIDEO: desktop + mobile -->
-  <section class="hero hero--video" aria-label="Promocja">
-    <div class="hero-video">
+<!-- HERO VIDEO -->
+<section class="hero hero--video">
+  <div class="hero-video">
+    <video
+      class="hero-video__media"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="none"
+      poster="./video/poster.jpg"
+    >
+      <source src="./video/promo-fixed.mp4" type="video/mp4" />
+    </video>
+  </div>
+</section>
 
-      <!-- DESKTOP (poziome) -->
-      <video class="hero-video__media hero-video__desktop"
-        autoplay muted loop playsinline webkit-playsinline
-        preload="none">
-        <source src="./video/promo-fixed.mp4" type="video/mp4" />
-      </video>
+<section id="onas" class="section">
+  <div class="section-card"><h2>O nas</h2></div>
+</section>
 
-      <!-- MOBILE (pionowe 9:16) -->
-      <video class="hero-video__media hero-video__mobile"
-        autoplay muted loop playsinline webkit-playsinline
-        preload="none">
-        <!-- jeśli jeszcze nie masz fixed, zmień na promo-mobile.mp4 -->
-        <source src="./video/promo-mobile-fixed.mp4" type="video/mp4" />
-      </video>
+<section id="oferta" class="section">
+  <div class="section-card"><h2>Oferta</h2></div>
+</section>
 
-      <div class="hero-overlay" aria-hidden="true"></div>
-    </div>
-  </section>
+<section id="badania" class="section">
+  <div class="section-card"><h2>Badania wzroku</h2></div>
+</section>
 
-  <section id="onas" class="section">
-    <div class="section-card"><h2>O nas</h2></div>
-  </section>
+<section id="galeria" class="section">
+  <div class="section-card"><h2>Galeria</h2></div>
+</section>
 
-  <section id="oferta" class="section">
-    <div class="section-card"><h2>Oferta</h2></div>
-  </section>
+<section id="blog" class="section">
+  <div class="section-card"><h2>Blog</h2></div>
+</section>
 
-  <section id="badania" class="section">
-    <div class="section-card"><h2>Badania wzroku</h2></div>
-  </section>
-
-  <section id="galeria" class="section">
-    <div class="section-card"><h2>Galeria</h2></div>
-  </section>
-
-  <section id="blog" class="section">
-    <div class="section-card"><h2>Blog</h2></div>
-  </section>
-
-  <section id="kontakt" class="section">
-    <div class="section-card contact-grid">
-      <div>
-        <h2>Kontakt</h2>
-        <p><strong>Maarco Optyk</strong><br>ul. Lędzińska 14<br>43-143 Lędziny</p>
-        <p>
-          📞 <a href="tel:+48885020020">885 020 020</a><br>
-          📞 <a href="tel:+48323266409">(32) 326 64 09</a><br>
-          ✉️ <a href="mailto:maarco.optyk@gmail.com">maarco.optyk@gmail.com</a>
-        </p>
-      </div>
-      <div class="contact-map">
-        <iframe
-          src="https://www.google.com/maps?q=Maarco+Optyk+L%C4%99dziny&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Mapa dojazdu – Maarco Optyk Lędziny">
-        </iframe>
-      </div>
-    </div>
-  </section>
+<section id="kontakt" class="section">
+  <div class="section-card"><h2>Kontakt</h2></div>
+</section>
 
 </main>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-info">
-      <strong>Maarco Optyk</strong><br>
-      ul. Lędzińska 14, Lędziny<br>
-      Tel:
-      <a href="tel:+48885020020">885 020 020</a> |
-      <a href="tel:+48323266409">(32) 326 64 09</a>
-    </div>
-
-    <div class="footer-social" aria-label="Social media">
-      <a href="https://www.facebook.com/MaarcoOptyk" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2.5v3H15c-.5 0-1 .4-1 1v2h2.5l-.5 3H14v7A10 10 0 0 0 22 12z"/>
-        </svg>
-      </a>
-
-      <a href="https://www.instagram.com/maarco_optyk/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-        </svg>
-      </a>
-
-      <a href="https://www.tiktok.com/@maarco.optyk" target="_blank" rel="noopener" aria-label="TikTok">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M21 8.5c-1.6 0-3.1-.5-4.3-1.4v8.2a6.3 6.3 0 1 1-5.6-6.3v3.3a3 3 0 1 0 2.3 2.9V2h3.3c.2 1.3.9 2.6 2 3.4.8.6 1.8.9 2.8.9V8.5z"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</footer>
-
-<script src="menu.js?v=301"></script>
+<script src="menu.js?v=400"></script>
 </body>
 </html>
