@@ -96,21 +96,19 @@ a{text-decoration:none;color:inherit}
   display:flex;flex-direction:column;gap:18px;
   color:#fff
 }
-/* ===== HERO LOGO – GLOW + CIEŃ (FINAL) ===== */
+/* ===== HERO LOGO – FINAL (BEZ GLOW) ===== */
 .hero-logo{
-  width: 420px;                 /* wielkość logo */
+  width: 300px;              /* mniejsze, ale ostre */
   max-width: 85%;
   height: auto;
   display: inline-block;
 
-  /* GLOW + CIEŃ */
-  filter:
-    drop-shadow(0 14px 28px rgba(0,0,0,.25))
-    drop-shadow(0 0 22px rgba(255,255,255,.15));
+  /* TYLKO CIEŃ – zero poświaty */
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.28));
 
-  /* odstęp od hasła */
   margin-bottom: 35px;
 }
+
 
 
 .hero-slogan{
@@ -169,13 +167,18 @@ a{text-decoration:none;color:inherit}
 
   /* ===== HERO ===== */
   .hero-logo{
-    width: 240px;            /* jak miałeś */
+    width: 240px;
     max-width: 90%;
+    height: auto;
+    display: inline-block;
     margin-bottom: 18px;
+
+    /* FINAL: tylko cień, bez glow (żeby nie uwydatniać “pikseli”) */
+    filter: drop-shadow(0 10px 18px rgba(0,0,0,.28));
   }
 
   .hero-content{
-    padding: 56px 22px 28px; /* lepszy oddech */
+    padding: 56px 22px 28px;
     max-width: 100%;
   }
 
