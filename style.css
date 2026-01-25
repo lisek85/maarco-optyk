@@ -102,8 +102,8 @@ a{text-decoration:none;color:inherit}
 
 .hero-content{
   position:absolute;inset:0;
-  padding-left: 180px;
-  padding-top: 160px;
+  padding-left: 140px;
+  padding-top: 1200px;
   max-width:760px;
   display:flex;flex-direction:column;gap:18px;
   color:#fff
