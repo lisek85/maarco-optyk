@@ -98,18 +98,18 @@ a{text-decoration:none;color:inherit}
 }
 /* ===== HERO LOGO – GLOW + CIEŃ (FINAL) ===== */
 .hero-logo{
-  width: 360px;                 /* wielkość logo */
+  width: 420px;                 /* wielkość logo */
   max-width: 85%;
   height: auto;
   display: inline-block;
 
   /* GLOW + CIEŃ */
   filter:
-    drop-shadow(0 14px 28px rgba(0,0,0,.45))
-    drop-shadow(0 0 22px rgba(255,255,255,.28));
+    drop-shadow(0 14px 28px rgba(0,0,0,.25))
+    drop-shadow(0 0 22px rgba(255,255,255,.15));
 
   /* odstęp od hasła */
-  margin-bottom: 22px;
+  margin-bottom: 35px;
 }
 
 
