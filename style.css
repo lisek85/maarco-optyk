@@ -103,6 +103,7 @@ a{text-decoration:none;color:inherit}
 .hero-content{
   position:absolute;inset:0;
   padding-left: 180px;
+  padding-top: 160px;
   max-width:760px;
   display:flex;flex-direction:column;gap:18px;
   color:#fff
@@ -188,6 +189,7 @@ a{text-decoration:none;color:inherit}
 
   .hero-content{
     padding-left: 100px;
+    padding-top: 90px;    
     max-width: 100%;
   }
 
