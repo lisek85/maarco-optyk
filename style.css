@@ -79,12 +79,23 @@ a{text-decoration:none;color:inherit}
 }
 /* HERO */
 .hero--image{
-  position:relative;
-  min-height:70vh;
-  border-radius:22px;
-  overflow:hidden;
-  background:url("assets/images/hero.jpg") center right/cover no-repeat
+  position: relative;
+  min-height: 70vh;
+  border-radius: 22px;
+  overflow: hidden;
+
+  /* DESKTOP – zdjęcie lekko pomniejszone, nic nie ucina */
+  background: url("assets/images/hero.jpg") center right / 92% no-repeat;
 }
+
+/* MOBILE – wracamy do cover, bo mały ekran */
+@media (max-width: 860px){
+  .hero--image{
+    min-height: 52vh;
+    background: url("assets/images/hero.jpg") center / cover no-repeat;
+  }
+}
+
 .hero-overlay{
   background:
     linear-gradient(
