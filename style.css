@@ -23,7 +23,16 @@ a{text-decoration:none;color:inherit}
 .nav{display:flex;gap:14px}
 .nav a{font-size:15.5px;font-weight:700;padding:8px 10px;border-radius:10px}
 .nav a:hover{background:#eef}
-.menu-toggle{display:none}
+.menu-toggle{
+  display: none;
+  border: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
 
 /* CTA */
 .header-cta{margin-left:auto;display:flex;gap:10px}
