@@ -165,6 +165,7 @@ a{text-decoration:none;color:inherit}
 
 /* MOBILE */
 @media (max-width: 860px) {
+  .hero-logo{ width: 240px; }
   .nav { display: none; }
   .menu-toggle { display: inline-flex; }
   .header-cta, .header-social { display: none; }
