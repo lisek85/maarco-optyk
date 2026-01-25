@@ -302,7 +302,32 @@ main {
 .btn-secondary:hover{
   background: rgba(255,255,255,.28);
 }
+/* LOGO W HERO */
+.hero-logo{
+  width: 180px;
+  max-width: 70%;
+  margin-bottom: 18px;
+}
 
+/* HASŁO – WIĘKSZE, DOMINUJĄCE */
+.hero-slogan{
+  font-size: clamp(32px, 4.8vw, 52px);
+  line-height: 1.15;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  max-width: 680px;
+}
+
+/* MOBILE DOSTROJENIE */
+@media (max-width: 860px){
+  .hero-logo{
+    width: 140px;
+  }
+
+  .hero-slogan{
+    font-size: clamp(26px, 7vw, 36px);
+  }
+}
 /* =====================================================
    SEKCJE
    ===================================================== */
