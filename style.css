@@ -41,7 +41,42 @@ a{text-decoration:none;color:inherit}
   border:1px solid var(--border)
 }
 .cta-call{background:var(--brand);color:#fff}
+/* SOCIAL */
+.header-social,
+.footer-social{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
 
+.header-social a,
+.footer-social a{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-social a{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--brand);
+}
+
+.footer-social a{
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.4);
+  color: #fff;
+}
+
+.header-social svg,
+.footer-social svg{
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
 /* HERO */
 .hero--image{
   position:relative;
