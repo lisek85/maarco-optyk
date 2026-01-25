@@ -88,11 +88,7 @@ a{text-decoration:none;color:inherit}
   background: url("assets/images/hero.jpg") center right / 92% no-repeat;
 }
 
-/* MOBILE – wracamy do cover, bo mały ekran */
-@media (max-width: 860px){
-  .hero--image{
-    min-height: 52vh;
-    background: url("assets/images/hero.jpg") center / cover no-repeat;
+
   }
 }
 
@@ -187,15 +183,10 @@ a{text-decoration:none;color:inherit}
 @media (max-width: 860px) {
 
   /* ===== HERO ===== */
-  .hero-logo{
-    width: 240px;
-    max-width: 90%;
-    height: auto;
-    display: inline-block;
-    margin-bottom: 18px;
-
-    /* FINAL: tylko cień, bez glow (żeby nie uwydatniać “pikseli”) */
-    filter: drop-shadow(0 10px 18px rgba(0,0,0,.28));
+  .hero--image{
+    min-height: 52vh;
+    background-position: center;
+    background-size: cover;
   }
 
   .hero-content{
@@ -203,13 +194,26 @@ a{text-decoration:none;color:inherit}
     max-width: 100%;
   }
 
+  .hero-logo{
+    width: 240px;
+    max-width: 90%;
+    height: auto;
+    display: inline-block;
+    margin-bottom: 18px;
+
+    /* FINAL: tylko cień, bez glow */
+    filter: drop-shadow(0 10px 18px rgba(0,0,0,.28));
+  }
+
   .hero-slogan{
     font-size: clamp(28px, 7vw, 40px);
     line-height: 1.15;
     margin: 0 0 14px 0;
+    white-space: normal; /* na mobile może się łamać naturalnie */
   }
 
   .hero-cta{
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
@@ -249,6 +253,7 @@ a{text-decoration:none;color:inherit}
     padding: 12px;
     border: 1px solid var(--border);
     z-index: 999;
+    box-shadow: 0 12px 24px rgba(0,0,0,.12);
   }
 
   .nav.is-open a{
