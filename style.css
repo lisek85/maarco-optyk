@@ -72,21 +72,24 @@ main {
   gap: 14px;
   padding: 10px 14px;
 
+  flex-wrap: nowrap;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .brand { display: inline-flex; align-items: center; }
-.logo { height: 40px; width: auto; }
+.logo { height: 40px; width: auto; display: block; }
 
 .nav {
   display: flex;
   gap: 14px;
+  align-items: center;
 }
 
 .nav a {
   font-weight: 700;
-  font-size: 14px;
-  padding: 8px 10px;
+  font-size: 15.5px; /* większe na desktop */
+  padding: 10px 12px;
   border-radius: 10px;
 }
 
@@ -95,27 +98,97 @@ main {
   text-decoration: none;
 }
 
+/* CTA */
 .header-cta {
   display: inline-flex;
   gap: 10px;
+  align-items: center;
 }
 
 .cta-call, .cta-map {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 14px;
   border-radius: 14px;
   font-weight: 800;
   font-size: 14px;
   border: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
   background: var(--surface);
+  color: var(--text);
+  transition: .2s;
 }
 
 .cta-call {
   background: var(--brand);
   color: var(--brand-contrast);
+  border-color: var(--brand);
+}
+
+.cta-call:hover { background: var(--brand-hover); }
+
+.cta-map:hover {
+  background: color-mix(in srgb, var(--brand-soft) 28%, var(--surface));
+}
+
+/* SOCIAL (header + footer) */
+.header-social,
+.footer-social {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.header-social a,
+.footer-social a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-social a {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--brand);
+}
+
+.footer-social a {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.4);
+  color: #fff;
+}
+
+.header-social svg,
+.footer-social svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* HAMBURGER (DOMYŚLNIE UKRYTY NA DESKTOP) */
+.menu-toggle {
+  display: none; /* ważne: desktop */
+  border: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 900;
+  cursor: pointer;
 }
 
 /* =====================================================
-   HERO IMAGE (NOWE)
+   HERO (base)
+   ===================================================== */
+.hero {
+  border-radius: 22px;
+  border: 1px solid var(--border);
+}
+
+/* =====================================================
+   HERO IMAGE
    ===================================================== */
 .hero--image{
   position: relative;
@@ -123,7 +196,7 @@ main {
   min-height: min(70vh, 560px);
   border-radius: 22px;
   overflow: hidden;
-  border: 1px solid var(--border);
+  background: #000;
   background-image: url("assets/images/hero.jpg");
   background-size: cover;
   background-position: center right;
@@ -176,36 +249,44 @@ main {
 }
 
 .hero-content h1{
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(30px, 4vw, 44px);
   margin: 0;
 }
 
 .hero-content p{
   font-size: 16px;
   max-width: 520px;
+  margin: 0;
+  opacity: .95;
 }
 
-/* =====================================================
-   CTA BUTTONS
-   ===================================================== */
+/* CTA BUTTONS */
 .hero-cta{
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin-top: 6px;
 }
 
 .btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px 18px;
   border-radius: 14px;
   font-weight: 800;
   font-size: 14px;
   border: 1px solid transparent;
   cursor: pointer;
+  text-decoration: none;
 }
+
+.btn:hover { text-decoration: none; }
 
 .btn-primary{
   background: var(--brand);
   color: var(--brand-contrast);
+  border-color: var(--brand);
 }
 
 .btn-primary:hover{
@@ -235,6 +316,12 @@ main {
   box-shadow: 0 10px 24px var(--shadow);
 }
 
+.section-card h2 {
+  margin-top: 0;
+  font-size: 22px;
+  color: var(--brand);
+}
+
 /* =====================================================
    KONTAKT
    ===================================================== */
@@ -242,6 +329,22 @@ main {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 18px;
+  align-items: stretch;
+}
+
+.contact-map {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  min-height: 320px; /* większa mapa */
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 0;
+  display: block;
 }
 
 /* =====================================================
@@ -250,7 +353,23 @@ main {
 .footer {
   background: var(--footer-bg);
   color: var(--footer-text);
+  border-top: 1px solid rgba(255,255,255,.14);
   margin-top: 30px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 16px; /* węższy pasek */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-info a {
+  color: #fff;
+  font-weight: 700;
 }
 
 /* =====================================================
@@ -259,4 +378,33 @@ main {
 @media (max-width: 860px) {
   .nav { display: none; }
   .menu-toggle { display: inline-flex; }
+  .header-cta, .header-social { display: none; }
+
+  .nav.is-open {
+    display: flex;
+    position: absolute;
+    top: 62px;
+    left: 12px;
+    right: 12px;
+    flex-direction: column;
+    background: var(--surface);
+    border-radius: 18px;
+    padding: 12px;
+    border: 1px solid var(--border);
+  }
+
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* =====================================================
+   SAFARI FIX
+   ===================================================== */
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .header { background: var(--surface); }
 }
