@@ -86,9 +86,16 @@ a{text-decoration:none;color:inherit}
   background:url("assets/images/hero.jpg") center right/cover no-repeat
 }
 .hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(5,26,66,.6),transparent)
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5,26,66,.78) 0%,
+      rgba(5,26,66,.52) 32%,
+      rgba(5,26,66,.22) 55%,
+      rgba(5,26,66,0) 75%
+    );
 }
+
 .hero-content{
   position:absolute;inset:0;
   padding:80px 40px;
@@ -96,18 +103,19 @@ a{text-decoration:none;color:inherit}
   display:flex;flex-direction:column;gap:18px;
   color:#fff
 }
-/* ===== HERO LOGO – FINAL (BEZ GLOW) ===== */
+/* ===== HERO LOGO – DESKTOP FINAL (SVG, bez glow) ===== */
 .hero-logo{
-  width: 300px;              /* mniejsze, ale ostre */
+  width: 300px;              /* bezpieczna wielkość – ostre SVG */
   max-width: 85%;
   height: auto;
   display: inline-block;
 
-  /* TYLKO CIEŃ – zero poświaty */
+  /* tylko cień – zero poświaty */
   filter: drop-shadow(0 10px 18px rgba(0,0,0,.28));
 
-  margin-bottom: 35px;
+  margin-bottom: 18px;
 }
+
 
 
 
