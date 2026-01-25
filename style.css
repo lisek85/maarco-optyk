@@ -72,18 +72,15 @@ main {
   gap: 14px;
   padding: 10px 14px;
 
-  flex-wrap: nowrap;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 .brand { display: inline-flex; align-items: center; }
-.logo { height: 40px; width: auto; display: block; }
+.logo { height: 40px; width: auto; }
 
 .nav {
   display: flex;
   gap: 14px;
-  align-items: center;
 }
 
 .nav a {
@@ -98,62 +95,131 @@ main {
   text-decoration: none;
 }
 
-/* CTA */
 .header-cta {
   display: inline-flex;
   gap: 10px;
-  align-items: center;
 }
 
 .cta-call, .cta-map {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   padding: 10px 14px;
   border-radius: 14px;
   font-weight: 800;
   font-size: 14px;
   border: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
   background: var(--surface);
-  color: var(--text);
-  transition: .2s;
 }
 
 .cta-call {
   background: var(--brand);
   color: var(--brand-contrast);
-  border-color: var(--brand);
-}
-
-.cta-call:hover { background: var(--brand-hover); }
-
-.cta-map:hover {
-  background: color-mix(in srgb, var(--brand-soft) 28%, var(--surface));
-}
-
-/* HAMBURGER */
-.menu-toggle {
-  display: none;
-  border: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
-  background: var(--surface);
-  border-radius: 12px;
-  padding: 10px 12px;
-  font-weight: 900;
-  cursor: pointer;
 }
 
 /* =====================================================
-   HERO
+   HERO IMAGE (NOWE)
    ===================================================== */
-.hero {
-  padding: 26px 18px;
+.hero--image{
+  position: relative;
+  padding: 0;
+  min-height: min(70vh, 560px);
   border-radius: 22px;
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--brand-soft) 35%, var(--surface)),
-    color-mix(in srgb, var(--surface) 92%, var(--bg))
-  );
+  overflow: hidden;
   border: 1px solid var(--border);
+  background-image: url("assets/images/hero.jpg");
+  background-size: cover;
+  background-position: center right;
+}
+
+@media (max-width: 860px){
+  .hero--image{
+    min-height: min(52vh, 420px);
+    background-position: center;
+  }
+}
+
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5,26,66,.55) 0%,
+      rgba(5,26,66,.25) 35%,
+      rgba(5,26,66,.05) 60%,
+      rgba(5,26,66,0) 75%
+    );
+}
+
+@media (max-width: 860px){
+  .hero-overlay{
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5,26,66,.45) 0%,
+        rgba(5,26,66,.20) 40%,
+        rgba(5,26,66,0) 65%
+      );
+  }
+}
+
+.hero-content{
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  padding: 48px 28px;
+  max-width: 720px;
+  color: #fff;
+}
+
+.hero-content h1{
+  font-size: clamp(28px, 4vw, 42px);
+  margin: 0;
+}
+
+.hero-content p{
+  font-size: 16px;
+  max-width: 520px;
+}
+
+/* =====================================================
+   CTA BUTTONS
+   ===================================================== */
+.hero-cta{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn{
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary{
+  background: var(--brand);
+  color: var(--brand-contrast);
+}
+
+.btn-primary:hover{
+  background: var(--brand-hover);
+}
+
+.btn-secondary{
+  background: rgba(255,255,255,.18);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.6);
+}
+
+.btn-secondary:hover{
+  background: rgba(255,255,255,.28);
 }
 
 /* =====================================================
@@ -169,12 +235,6 @@ main {
   box-shadow: 0 10px 24px var(--shadow);
 }
 
-.section-card h2 {
-  margin-top: 0;
-  font-size: 22px;
-  color: var(--brand);
-}
-
 /* =====================================================
    KONTAKT
    ===================================================== */
@@ -184,77 +244,13 @@ main {
   gap: 18px;
 }
 
-.contact-map {
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  min-height: 260px;
-}
-
-.contact-map iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
 /* =====================================================
    FOOTER
    ===================================================== */
 .footer {
   background: var(--footer-bg);
   color: var(--footer-text);
-  border-top: 1px solid rgba(255,255,255,.14);
   margin-top: 30px;
-}
-
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-info a {
-  color: #fff;
-  font-weight: 700;
-}
-
-/* SOCIAL */
-.header-social,
-.footer-social {
-  display: flex;
-  gap: 12px;
-}
-
-.header-social a,
-.footer-social a {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header-social a {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--brand);
-}
-
-.footer-social a {
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.4);
-  color: #fff;
-}
-
-.header-social svg,
-.footer-social svg {
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
 }
 
 /* =====================================================
@@ -263,63 +259,4 @@ main {
 @media (max-width: 860px) {
   .nav { display: none; }
   .menu-toggle { display: inline-flex; }
-  .header-cta, .header-social { display: none; }
-
-  .nav.is-open {
-    display: flex;
-    position: absolute;
-    top: 62px;
-    left: 12px;
-    right: 12px;
-    flex-direction: column;
-    background: var(--surface);
-    border-radius: 18px;
-    padding: 12px;
-  }
-
-  .contact-grid { grid-template-columns: 1fr; }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-}
-
-/* =====================================================
-   SAFARI FIX
-   ===================================================== */
-@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-  .header { background: var(--surface); }
-}
-
-/* =====================================================
-   HERO VIDEO (MP4)
-   ===================================================== */
-.hero--video { padding: 0; }
-
-.hero--video .hero-video{
-  position: relative;
-  width: 100%;
-  border-radius: 22px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: #000;
-}
-
-.hero-video__media{
-  width: 100%;
-  height: min(70vh, 560px);
-  object-fit: cover;
-  display: block;
-}
-
-@media (max-width: 860px){
-  .hero-video__media{ height: min(52vh, 420px); }
-}
-
-.hero-overlay{
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.10));
 }
