@@ -177,7 +177,7 @@ a{text-decoration:none;color:inherit}
 .footer-social{display:flex;gap:14px}
 
 /* MOBILE */
-@media (max-width: 860px) {
+@media (max-width: 1200px) {
 
   /* ===== HERO ===== */
   .hero--image{
@@ -187,7 +187,7 @@ a{text-decoration:none;color:inherit}
   }
 
   .hero-content{
-    padding: 56px 22px 28px;
+    padding-left: 72px;
     max-width: 100%;
   }
 
