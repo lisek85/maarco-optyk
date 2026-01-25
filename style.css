@@ -97,7 +97,7 @@ a{text-decoration:none;color:inherit}
   color:#fff
 }
 .hero-logo{
-  width: 360px;           /* <<< TO ZWIĘKSZA LOGO */
+  width: 300px;           /* <<< TO ZWIĘKSZA LOGO */
   max-width: 85%;
   height: auto;
   display: inline-block;
