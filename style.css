@@ -178,17 +178,22 @@ a{text-decoration:none;color:inherit}
   height: auto;
   display: inline-block;
 
-  /* glass badge */
+  /* glass: prawie niewidoczne */
   padding: 10px 14px;
   border-radius: 18px;
-  background: rgba(255,255,255,.18);
-  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.06);          /* było .18/.22 -> mniej */
+  border: 1px solid rgba(255,255,255,.08);     /* ramka prawie znika */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,.22));
+  /* czytelność logo bez ramki */
+  filter:
+    drop-shadow(0 10px 18px rgba(0,0,0,.28))
+    drop-shadow(0 0 10px rgba(255,255,255,.10));
+
   margin-bottom: 18px;
 }
+
 
 .hero-slogan{
   font-size:clamp(24px,3.4vw,38px);
