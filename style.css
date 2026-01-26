@@ -219,6 +219,34 @@ a{text-decoration:none;color:inherit}
 .btn-primary{background:var(--brand);color:#fff;border:none}
 .btn-secondary{background:rgba(255,255,255,.18);color:#fff}
 
+.hero-proof{
+  margin-top: 16px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.88);
+  border: 1px solid rgba(0,0,0,.08);
+  color: var(--text);
+  max-width: 260px;
+}
+.hero-proof__title{
+  font-weight: 800;
+  font-size: 13px;
+  margin: 0;
+}
+.hero-proof__meta{
+  font-size: 12px;
+  margin: 0;
+  color: var(--muted);
+}
+.hero-proof__link{
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--brand);
+}
+
 /* SEKCJE */
 .section{margin-top:22px}
 .section-card{
