@@ -12,30 +12,26 @@
 body{margin:0;font-family:system-ui;background:var(--bg);color:var(--text)}
 a{text-decoration:none;color:inherit}
 
-/* HEADER */
-.header{
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: color-mix(in srgb, var(--surface) 92%, transparent);
-  border-bottom: 1px solid var(--border);
-  padding: 10px 14px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  display: grid;
-  grid-template-columns: auto 1fr auto auto; /* logo | nav | CTA | social */
+/* HEADER LOGO – bez białego podkładu */
+.brand{
+  display: inline-flex;
   align-items: center;
-  gap: 14px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
+/* SVG logo – czysto + delikatny cień */
 .logo{
   height: 40px;
   width: auto;
   display: block;
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,.10));
-
+  border-radius: 0;
+  filter: drop-shadow(0 6px 14px rgba(5,26,66,.12));
 }
+
 
 .brand{
   display: inline-flex;
