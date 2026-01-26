@@ -448,6 +448,12 @@ a{text-decoration:none;color:inherit}
   color:#fff;
   font-weight:700;
 }
+.badania__cta-note{
+  margin:6px 0 0;
+  font-size:12px;
+  font-weight:600;
+  color:var(--muted);
+}
 .badania__who{
   margin-top:18px;
 }
