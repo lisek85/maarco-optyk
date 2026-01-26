@@ -31,20 +31,23 @@ a{text-decoration:none;color:inherit}
   flex-wrap:nowrap;           /* <<< wszystko zawsze w jednej linii */
 }
 
-/* HEADER LOGO – bez białego podkładu */
+/* HEADER LOGO – GLASS CAPSULE (jak w hero) */
 .brand{
-  padding: 0;
-  background: none;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
+  padding: 6px 10px !important;
+  border-radius: 18px !important;
+  background: rgba(255,255,255,.18) !important;
+  border: 1px solid rgba(255,255,255,.22) !important;
+  box-shadow: 0 10px 24px rgba(5,26,66,.10) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
 }
 
+/* Logo bez własnego tła */
 .logo{
-  height: 40px;
-  width: auto;
-  display: block;
-  filter: drop-shadow(0 6px 14px rgba(5,26,66,.12));
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 6px 14px rgba(5,26,66,.12)) !important;
 }
 
 
