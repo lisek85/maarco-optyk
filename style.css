@@ -202,7 +202,12 @@ a{text-decoration:none;color:inherit}
   white-space: nowrap;
 }
 
-.hero-cta{display:flex;gap:12px}
+.hero-cta{
+  margin-top: 18px;   /* było 0 lub mało — to zwiększa odstęp od hasła */
+  display: flex;
+  gap: 14px;
+}
+
 
 .btn{
   padding:12px 18px;
