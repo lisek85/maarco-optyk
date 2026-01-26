@@ -396,10 +396,13 @@ a{text-decoration:none;color:inherit}
 }
 .badania__photo{
   border-radius:18px;
-  min-height:160px;
+  min-height:200px;
   background-size:cover;
   background-position:center;
   background-image: linear-gradient(135deg, rgba(20,30,48,.65), rgba(36,59,85,.45));
+}
+.badania__photo--dziecko{
+  min-height:220px;
 }
 .badania__photo--badanie{
   background-image:
@@ -496,6 +499,12 @@ a{text-decoration:none;color:inherit}
   .badania__intro-media{
     grid-template-rows: none;
     grid-template-columns: 1fr 1fr;
+  }
+  .badania__photo{
+    min-height:190px;
+  }
+  .badania__photo--dziecko{
+    min-height:210px;
   }
   .badania__kids{
     grid-template-columns: 1fr;
