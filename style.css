@@ -33,15 +33,18 @@ a{text-decoration:none;color:inherit}
   height: 40px;
   width: auto;
   display: block;
-  border-radius: 14px;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.10));
+
 }
 
 .brand{
   display: inline-flex;
   align-items: center;
-  padding: 6px 8px;
-  border-radius: 14px;
-  background: rgba(255,255,255,.9);
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .nav{
