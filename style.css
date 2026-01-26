@@ -16,31 +16,16 @@ a{text-decoration:none;color:inherit}
 .brand{
   display: inline-flex;
   align-items: center;
-  padding: 0;
+  padding: 6px 10px;
+  border-radius: 18px;
   background: transparent;
-  border: none;
   box-shadow: none;
-  border-radius: 0;
 }
-
-/* SVG logo – czysto + delikatny cień */
 .logo{
   height: 40px;
   width: auto;
   display: block;
-  border-radius: 0;
   filter: drop-shadow(0 6px 14px rgba(5,26,66,.12));
-}
-
-
-.brand{
-  display: inline-flex;
-  align-items: center;
-  padding: 0;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
 }
 
 .nav{
