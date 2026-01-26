@@ -24,17 +24,18 @@ a{text-decoration:none;color:inherit}
   -webkit-backdrop-filter: blur(10px);
 
   display: grid;
-  grid-template-columns: auto 1fr auto; /* logo | nav | prawa strona */
+  grid-template-columns: auto 1fr auto; /* logo | nav (center) | right */
   align-items: center;
   gap: 14px;
 }
+
 
 
 .logo{
   height: 40px;
   width: auto;
   display: block;
-  border-radius: 12px;   /* <<< zaokrąglenie */
+  border-radius: 14px;   /* <<< zaokrąglenie */
 }
 .brand{
   display: inline-flex;
