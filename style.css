@@ -359,3 +359,160 @@ a{text-decoration:none;color:inherit}
   }
   .footer-social{ margin-top:8px; }
 }
+
+/* BADANIA WZROKU */
+.badania__intro{
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap:24px;
+  align-items:stretch;
+}
+.badania__eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:12px;
+  font-weight:700;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+.badania__lead{
+  font-size:16px;
+  margin:8px 0 12px;
+}
+.badania__benefits{
+  margin:0 0 16px;
+  padding-left:18px;
+  color:var(--text);
+}
+.badania__cta{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.badania__intro-media{
+  display:grid;
+  gap:14px;
+  grid-template-rows: 1fr 1fr;
+}
+.badania__photo{
+  border-radius:18px;
+  min-height:200px;
+  background-size:cover;
+  background-position:center;
+  background-image: linear-gradient(135deg, rgba(20,30,48,.65), rgba(36,59,85,.45));
+}
+.badania__photo--dziecko{
+  min-height:220px;
+}
+.badania__photo--badanie{
+  background-image:
+    linear-gradient(135deg, rgba(17,24,39,.55), rgba(148,163,184,.25)),
+    url("assets/images/stock-badanie.jpg");
+}
+.badania__photo--sprzet{
+  background-image:
+    linear-gradient(135deg, rgba(15,23,42,.55), rgba(59,130,246,.18)),
+    url("assets/images/stock-sprzet.jpg");
+}
+.badania__photo--dziecko{
+  background-image:
+    linear-gradient(135deg, rgba(30,41,59,.55), rgba(125,211,252,.2)),
+    url("assets/images/stock-dziecko.jpg");
+}
+.badania__services{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:18px;
+  margin-top:18px;
+}
+.badania__service-card{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.badania__service-head h3{
+  margin:0 0 6px;
+}
+.badania__price{
+  font-weight:700;
+  color:var(--brand);
+  margin:0;
+}
+.badania__details{
+  margin:0;
+  padding-left:18px;
+  color:var(--text);
+}
+.badania__service-cta{
+  align-self:flex-start;
+  padding:10px 16px;
+  border-radius:12px;
+  background:var(--brand);
+  color:#fff;
+  font-weight:700;
+}
+.badania__cta-note{
+  margin:6px 0 0;
+  font-size:12px;
+  font-weight:600;
+  color:var(--muted);
+}
+.badania__who{
+  margin-top:18px;
+}
+.badania__who-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:16px;
+}
+.badania__steps{
+  margin-top:18px;
+}
+.badania__steps-list{
+  margin:0;
+  padding-left:18px;
+  display:grid;
+  gap:8px;
+}
+.badania__kids{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap:18px;
+  align-items:center;
+}
+.badania__kids-text h3{
+  margin-top:0;
+}
+.badania__final{
+  margin-top:18px;
+}
+.badania__summary{
+  margin:0 0 16px;
+  padding-left:18px;
+}
+
+@media (max-width: 860px){
+  .badania__intro{
+    grid-template-columns: 1fr;
+  }
+  .badania__intro-media{
+    grid-template-rows: none;
+    grid-template-columns: 1fr 1fr;
+  }
+  .badania__photo{
+    min-height:190px;
+  }
+  .badania__photo--dziecko{
+    min-height:210px;
+  }
+  .badania__kids{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 861px){
+  .badania__intro-media .badania__photo{
+    min-height:320px;
+  }
+}
