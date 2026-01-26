@@ -12,6 +12,25 @@
 body{margin:0;font-family:system-ui;background:var(--bg);color:var(--text)}
 a{text-decoration:none;color:inherit}
 
+/* =========================
+   HEADER – 1 LINIA (DESKTOP)
+   ========================= */
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 14px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  display:flex;               /* wracamy do flex => najstabilniej bez zmian HTML */
+  align-items:center;
+  gap:14px;
+  flex-wrap:nowrap;           /* <<< wszystko zawsze w jednej linii */
+}
+
 /* HEADER LOGO – bez białego podkładu */
 .brand{
   display: inline-flex;
@@ -20,6 +39,7 @@ a{text-decoration:none;color:inherit}
   border-radius: 18px;
   background: transparent;
   box-shadow: none;
+  flex: 0 0 auto;
 }
 .logo{
   height: 40px;
@@ -28,16 +48,20 @@ a{text-decoration:none;color:inherit}
   filter: drop-shadow(0 6px 14px rgba(5,26,66,.12));
 }
 
+/* NAV – środek */
 .nav{
   display:flex;
   gap:14px;
   justify-content:center;
   align-items:center;
-}
 
-.nav a{font-size:15.5px;font-weight:700;padding:8px 10px;border-radius:10px}
+  flex: 1 1 auto;   /* bierze środek */
+  min-width: 0;     /* pozwala się ścisnąć zamiast spychać CTA/social w dół */
+}
+.nav a{font-size:15.5px;font-weight:700;padding:8px 10px;border-radius:10px; white-space:nowrap;}
 .nav a:hover{background:#eef}
 
+/* MENU TOGGLE (desktop ukryte) */
 .menu-toggle{
   display: none;
   border: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
@@ -46,45 +70,46 @@ a{text-decoration:none;color:inherit}
   padding: 10px 12px;
   font-weight: 900;
   cursor: pointer;
+  flex: 0 0 auto;
 }
 
-/* żeby menu-toggle nie tworzył nowego wiersza w gridzie */
-.menu-toggle{ grid-column: 1; grid-row: 1; }
-
-/* CTA */
+/* CTA + SOCIAL – prawa strona, zawsze w 1 linii */
 .header-cta{
-  display:flex;
+  display:inline-flex;
   gap:10px;
   align-items:center;
-  justify-self:end;
+  margin-left:auto;           /* <<< pcha na prawo */
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .cta-call,.cta-map{
-  padding:10px 14px;border-radius:14px;font-weight:800;
-  border:1px solid var(--border)
+  padding:10px 14px;
+  border-radius:14px;
+  font-weight:800;
+  border:1px solid var(--border);
+  white-space:nowrap;
 }
 .cta-call{background:var(--brand);color:#fff}
 
 /* SOCIAL */
 .header-social,
 .footer-social{
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.header-social{
-  justify-self:end;
+  display:inline-flex;        /* <<< nigdy nie spadnie niżej */
+  gap:12px;
+  align-items:center;
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .header-social a,
 .footer-social a{
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .header-social a{
@@ -101,12 +126,14 @@ a{text-decoration:none;color:inherit}
 
 .header-social svg,
 .footer-social svg{
-  width: 22px;
-  height: 22px;
+  width:22px;
+  height:22px;
   fill: currentColor;
 }
 
-/* HERO */
+/* =========================
+   HERO
+   ========================= */
 .hero--image{
   position: relative;
   min-height: 70vh;
@@ -141,14 +168,14 @@ a{text-decoration:none;color:inherit}
   color:#fff;
 }
 
-/* HERO LOGO – DESKTOP (SVG, bez glow) */
+/* HERO LOGO – DESKTOP (SVG) */
 .hero-logo{
   width: 300px;
   max-width: 85%;
   height: auto;
   display: inline-block;
 
-  /* PODBITKA (glass badge) */
+  /* glass badge */
   padding: 10px 14px;
   border-radius: 18px;
   background: rgba(255,255,255,.18);
@@ -156,12 +183,9 @@ a{text-decoration:none;color:inherit}
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
-  /* tylko cień – premium */
   filter: drop-shadow(0 10px 18px rgba(0,0,0,.22));
-
   margin-bottom: 18px;
 }
-
 
 .hero-slogan{
   font-size:clamp(24px,3.4vw,38px);
@@ -174,8 +198,10 @@ a{text-decoration:none;color:inherit}
 .hero-cta{display:flex;gap:12px}
 
 .btn{
-  padding:12px 18px;border-radius:14px;
-  font-weight:800;border:1px solid rgba(255,255,255,.6)
+  padding:12px 18px;
+  border-radius:14px;
+  font-weight:800;
+  border:1px solid rgba(255,255,255,.6)
 }
 .btn-primary{background:var(--brand);color:#fff;border:none}
 .btn-secondary{background:rgba(255,255,255,.18);color:#fff}
@@ -183,7 +209,9 @@ a{text-decoration:none;color:inherit}
 /* SEKCJE */
 .section{margin-top:22px}
 .section-card{
-  background:#fff;padding:22px;border-radius:22px;
+  background:#fff;
+  padding:22px;
+  border-radius:22px;
   border:1px solid var(--border)
 }
 
@@ -213,28 +241,58 @@ a{text-decoration:none;color:inherit}
 /* FOOTER */
 .footer{background:var(--brand);color:#fff;margin-top:30px}
 .footer-inner{
-  max-width:1100px;margin:auto;
+  max-width:1100px;
+  margin:auto;
   padding:14px 16px;
-  display:flex;justify-content:space-between;align-items:center
+  display:flex;
+  justify-content:space-between;
+  align-items:center
 }
 .footer-social{display:flex;gap:14px}
 
-/* <=1200px (laptopy): tylko delikatne uspokojenie hero, bez mobile menu) */
+/* <=1200px (laptopy): delikatnie ściskamy nav, żeby nadal był 1 wiersz */
 @media (max-width: 1200px){
-  .hero-content{
-    padding-left: 80px;
-    padding-top: 110px;
-  }
+  .nav{ gap:10px; }
+  .nav a{ font-size:14.5px; padding:7px 8px; }
+  .header-social a{ width:40px; height:40px; }
+  .header-social svg{ width:20px; height:20px; }
 }
 
 /* MOBILE */
-@media (max-width: 860px) {
+@media (max-width: 860px){
+
+  /* HEADER mobile: logo lewo, menu prawo, reszta znika */
+  .nav{ display:none; }
+  .menu-toggle{ display:inline-flex; margin-left:auto; }
+
+  .header-cta,
+  .header-social{ display:none; }
+
+  /* rozwijane menu */
+  .nav.is-open{
+    display:flex;
+    position:absolute;
+    top: calc(100% + 8px);
+    left:12px;
+    right:12px;
+    flex-direction:column;
+    background: var(--surface);
+    border-radius:18px;
+    padding:12px;
+    border:1px solid var(--border);
+    z-index:999;
+    box-shadow:0 12px 24px rgba(0,0,0,.12);
+  }
+  .nav.is-open a{
+    padding:12px 14px;
+    font-size:16px;
+  }
 
   /* HERO */
   .hero--image{
     min-height: 52vh;
-    background-position: center;
-    background-size: cover;
+    background-position:center;
+    background-size:cover;
   }
 
   .hero-content{
@@ -242,9 +300,6 @@ a{text-decoration:none;color:inherit}
     max-width: 100%;
   }
 
- @media (max-width: 860px){
-
-  /* HERO */
   .hero-logo{
     width: 240px;
     padding: 8px 12px;
@@ -265,66 +320,29 @@ a{text-decoration:none;color:inherit}
   }
 
   .hero-cta{
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    margin-top: 4px;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:10px;
+    margin-top:4px;
   }
-
   .hero-cta .btn{
-    width: 100%;
-    text-align: center;
-    padding: 14px 18px;
-    font-size: 15px;
-  }
-
-  /* HEADER (mobile) */
-  .nav{ display: none; }
-  .menu-toggle{ display: inline-flex; }
-
-  .header-cta,
-  .header-social{ display: none; }
-
-  /* logo ma być po LEWEJ, menu po PRAWEJ */
-  .header{
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-  }
-  .brand{ justify-self: start; }
-  .menu-toggle{ justify-self: end; }
-
-  .nav.is-open{
-    display: flex;
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 12px;
-    right: 12px;
-    flex-direction: column;
-    background: var(--surface);
-    border-radius: 18px;
-    padding: 12px;
-    border: 1px solid var(--border);
-    z-index: 999;
-    box-shadow: 0 12px 24px rgba(0,0,0,.12);
-  }
-
-  .nav.is-open a{
-    padding: 12px 14px;
-    font-size: 16px;
+    width:100%;
+    text-align:center;
+    padding:14px 18px;
+    font-size:15px;
   }
 
   /* KONTAKT */
-  .contact-grid{ grid-template-columns: 1fr; }
-  .contact-map{ min-height: 280px; }
-  .contact-map iframe{ min-height: 280px; }
+  .contact-grid{ grid-template-columns:1fr; }
+  .contact-map{ min-height:280px; }
+  .contact-map iframe{ min-height:280px; }
 
   /* FOOTER */
   .footer-inner{
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
   }
-
-  .footer-social{ margin-top: 8px; }
+  .footer-social{ margin-top:8px; }
 }
