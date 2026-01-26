@@ -515,4 +515,7 @@ a{text-decoration:none;color:inherit}
   .badania__intro-media .badania__photo{
     min-height:320px;
   }
+  .badania__photo--dziecko{
+    min-height:340px;
+  }
 }
