@@ -510,3 +510,9 @@ a{text-decoration:none;color:inherit}
     grid-template-columns: 1fr;
   }
 }
+
+@media (min-width: 861px){
+  .badania__intro-media .badania__photo{
+    min-height:320px;
+  }
+}
