@@ -33,20 +33,20 @@ a{text-decoration:none;color:inherit}
 
 /* HEADER LOGO – bez białego podkładu */
 .brand{
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 10px;
-  border-radius: 18px;
-  background: transparent;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
   box-shadow: none;
-  flex: 0 0 auto;
 }
+
 .logo{
   height: 40px;
   width: auto;
   display: block;
   filter: drop-shadow(0 6px 14px rgba(5,26,66,.12));
 }
+
 
 /* NAV – środek */
 .nav{
