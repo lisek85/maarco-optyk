@@ -258,7 +258,9 @@ a{text-decoration:none;color:inherit}
     max-width: 100%;
   }
 
-  @media (max-width: 860px){
+ @media (max-width: 860px){
+
+  /* HERO */
   .hero-logo{
     width: 240px;
     padding: 8px 12px;
@@ -267,8 +269,6 @@ a{text-decoration:none;color:inherit}
     border: 1px solid rgba(255,255,255,.24);
     filter: drop-shadow(0 10px 18px rgba(0,0,0,.20));
   }
-}
-
 
   .hero-slogan{
     color: var(--brand);
@@ -302,10 +302,18 @@ a{text-decoration:none;color:inherit}
   .header-cta,
   .header-social{ display: none; }
 
+  /* logo ma być po LEWEJ, menu po PRAWEJ */
+  .header{
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+  .brand{ justify-self: start; }
+  .menu-toggle{ justify-self: end; }
+
   .nav.is-open{
     display: flex;
     position: absolute;
-    top: 62px;
+    top: calc(100% + 8px);
     left: 12px;
     right: 12px;
     flex-direction: column;
