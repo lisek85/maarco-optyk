@@ -229,6 +229,15 @@ a{text-decoration:none;color:inherit}
   border:1px solid var(--border)
 }
 
+.reviews-elfsight__card{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.reviews-elfsight__widget{
+  width:100%;
+}
+
 /* KONTAKT */
 .contact-grid{
   display: grid;
