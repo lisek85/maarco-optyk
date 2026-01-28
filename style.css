@@ -244,6 +244,135 @@ a{text-decoration:none;color:inherit}
   width:100%;
 }
 
+/* BLOG (ULTRA PREMIUM) – Poradnik wzroku */
+.blog-premium__card{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.blog-premium__lead{
+  color:var(--muted);
+  margin:6px 0 0;
+}
+.blog-premium__chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.blog-premium__chip{
+  display:inline-flex;
+  padding:6px 12px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  font-size:12px;
+  font-weight:700;
+  color:var(--text);
+}
+.post{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap:18px;
+  padding:18px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  background:#fff;
+}
+.post--featured{
+  grid-template-columns: 1.2fr 0.8fr;
+  background:linear-gradient(135deg, rgba(255,255,255,.92), rgba(248,250,252,.98));
+}
+.post__eyebrow{
+  font-size:12px;
+  font-weight:700;
+  color:var(--muted);
+  margin:0 0 8px;
+}
+.post__title{
+  font-size:clamp(20px, 2.6vw, 28px);
+  margin:0 0 8px;
+}
+.post__lead{
+  margin:0 0 12px;
+}
+.post__points{
+  margin:0 0 12px;
+  padding-left:18px;
+}
+.post__details{
+  margin-top:12px;
+}
+.post__more{
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-weight:700;
+  color:var(--brand);
+}
+.post__more-open{display:inline;}
+.post__more-close{display:inline;}
+details[open] .post__more-open{display:none;}
+details:not([open]) .post__more-close{display:none;}
+.post__body{
+  margin-top:12px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.post__cta{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.post__cta-btn{
+  padding:10px 16px;
+  border-radius:12px;
+  background:var(--brand);
+  color:#fff;
+  font-weight:700;
+}
+.post__cta-link{
+  font-weight:700;
+  color:var(--brand);
+}
+.post__media{
+  min-height:240px;
+  border-radius:18px;
+  background-size:cover;
+  background-position:center;
+}
+.post--featured .post__media{
+  min-height:320px;
+}
+.blog-premium__grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:18px;
+}
+.blog-premium__grid .post{
+  grid-template-columns: 1fr;
+}
+.blog-premium__grid .post__media{
+  order:-1;
+}
+@media (max-width: 980px){
+  .blog-premium__grid{
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 860px){
+  .post,
+  .post--featured{
+    grid-template-columns: 1fr;
+  }
+  .post__media,
+  .post--featured .post__media{
+    min-height:220px;
+    order:-1;
+  }
+}
+
 /* KONTAKT */
 .contact-grid{
   display: grid;
