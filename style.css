@@ -244,6 +244,15 @@ a{text-decoration:none;color:inherit}
   width:100%;
 }
 
+/* Elfsight guard: hide duplicated widget instances if injected twice */
+.elfsight-app-8f874876-955d-49a3-b6cd-a1608f460e87 > .eapps-widget:nth-of-type(n+2),
+.elfsight-app-8f874876-955d-49a3-b6cd-a1608f460e87 > .eapps-widget + .eapps-widget{
+  display:none !important;
+}
+.elfsight-app-8f874876-955d-49a3-b6cd-a1608f460e87 > div:nth-of-type(n+2){
+  display:none !important;
+}
+
 /* BLOG (ULTRA PREMIUM) – Poradnik wzroku */
 .blog-premium__card{
   display:flex;
