@@ -617,6 +617,13 @@ details:not([open]) .post__more-close{display:none;}
 .badania__who{
   margin-top:18px;
 }
+.badania__when-grid,
+.badania__after-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:24px;
+  margin-top:18px;
+}
 .badania__who-grid{
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -650,6 +657,10 @@ details:not([open]) .post__more-close{display:none;}
 }
 
 @media (max-width: 860px){
+  .badania__when-grid,
+  .badania__after-grid{
+    grid-template-columns: 1fr;
+  }
   .badania__intro{
     grid-template-columns: 1fr;
   }
@@ -675,32 +686,4 @@ details:not([open]) .post__more-close{display:none;}
   .badania__photo--dziecko{
     min-height:340px;
   }
-}
-/* BADANIA: Jak wygląda wizyta – ciaśniejsze odstępy (tylko ta karta) */
-.badania__steps h3{
-  margin: 0 0 12px;
-}
-
-.badania__steps h4{
-  margin: 12px 0 6px;   /* było za duże */
-}
-
-.badania__steps p{
-  margin: 0 0 10px;     /* ciaśniej między akapitami */
-}
-
-.badania__steps ul,
-.badania__steps ol{
-  margin: 0 0 10px;
-  padding-left: 18px;
-}
-
-.badania__steps li{
-  margin: 0 0 6px;
-}
-
-/* opcjonalnie: jeśli chcesz jeszcze ciaśniej na mobile */
-@media (max-width: 860px){
-  .badania__steps h4{ margin: 10px 0 6px; }
-  .badania__steps p{ margin: 0 0 8px; }
 }
