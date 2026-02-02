@@ -583,6 +583,7 @@ details:not([open]) .post__more-close{display:none;}
   display:flex;
   flex-direction:column;
   gap:12px;
+  padding-bottom:16px;
 }
 .badania__service-head h3{
   margin:0 0 6px;
@@ -599,6 +600,8 @@ details:not([open]) .post__more-close{display:none;}
 }
 .badania__service-cta{
   align-self:flex-start;
+  margin-top:auto;
+  margin-bottom:16px;
   padding:10px 16px;
   border-radius:12px;
   background:var(--brand);
