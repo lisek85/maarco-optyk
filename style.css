@@ -617,13 +617,6 @@ details:not([open]) .post__more-close{display:none;}
 .badania__who{
   margin-top:18px;
 }
-.badania__when-grid,
-.badania__after-grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:24px;
-  margin-top:18px;
-}
 .badania__who-grid{
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -657,10 +650,6 @@ details:not([open]) .post__more-close{display:none;}
 }
 
 @media (max-width: 860px){
-  .badania__when-grid,
-  .badania__after-grid{
-    grid-template-columns: 1fr;
-  }
   .badania__intro{
     grid-template-columns: 1fr;
   }
