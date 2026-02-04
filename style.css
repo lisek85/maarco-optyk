@@ -687,3 +687,29 @@ details:not([open]) .post__more-close{display:none;}
     min-height:340px;
   }
 }
+/* FIX: Badania – "Jak wygląda wizyta" (porządne odstępy + numeracja) */
+.badania__steps-list{
+  display: block;     /* override grid (bez ruszania istniejącej reguły) */
+  gap: 0;             /* na wypadek gdyby przeglądarka interpretowała */
+}
+
+.badania__steps-list li{
+  margin: 0 0 14px;
+}
+
+.badania__steps-list li:last-child{
+  margin-bottom: 0;
+}
+
+.badania__steps-list h4{
+  margin: 0 0 6px;
+}
+
+.badania__steps-list p{
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+.badania__steps-list p:last-child{
+  margin-bottom: 0;
+}
