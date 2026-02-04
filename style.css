@@ -713,3 +713,6 @@ details:not([open]) .post__more-close{display:none;}
 .badania__steps-list p:last-child{
   margin-bottom: 0;
 }
+.post__media--okulary-apteka{
+  background-image: url("assets/images/blog-okulary-apteka.jpg");
+}
