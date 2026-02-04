@@ -723,5 +723,5 @@ details:not([open]) .post__more-close{display:none;}
   background-image: url("assets/images/blog-progresy.jpg");
 }
 .post__media--progresy{
-  background-position: center 5%;
+  min-height: 360px;
 }
