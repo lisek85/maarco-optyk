@@ -722,6 +722,9 @@ details:not([open]) .post__more-close{display:none;}
 .post__media--progresy{
   background-image: url("assets/images/blog-progresy.jpg");
 }
+/* Blog – szkła progresywne: poprawne kadrowanie */
 .post__media--progresy{
-  min-height: 360px;
+  min-height: 360px;              /* daje więcej miejsca */
+  background-position: center 15%;/* przesuwa kadr w górę – pokazuje „bliż” */
 }
+
