@@ -719,3 +719,6 @@ details:not([open]) .post__more-close{display:none;}
 .post__media--suche-oko{
   background-image: url("assets/images/blog-suche-oko.jpg");
 }
+.post__media--progresy{
+  background-image: url("assets/images/blog-progresy.jpg");
+}
