@@ -716,3 +716,6 @@ details:not([open]) .post__more-close{display:none;}
 .post__media--okulary-apteka{
   background-image: url("assets/images/blog-okulary-apteka.jpg");
 }
+.post__media--suche-oko{
+  background-image: url("assets/images/blog-suche-oko.jpg");
+}
