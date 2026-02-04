@@ -722,3 +722,6 @@ details:not([open]) .post__more-close{display:none;}
 .post__media--progresy{
   background-image: url("assets/images/blog-progresy.jpg");
 }
+.post__media--progresy{
+  background-position: center 15%;
+}
