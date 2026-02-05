@@ -727,4 +727,52 @@ details:not([open]) .post__more-close{display:none;}
   min-height: 360px;              /* daje więcej miejsca */
   background-position: center 25%;/* przesuwa kadr w górę – pokazuje „bliż” */
 }
+/* PROMOCJE – sekcja "Aktualnie" */
+.promo h2{
+  margin-top: 0;
+}
 
+.promo__grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.promo__item{
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.promo__item h3{
+  margin: 0;
+  font-size: 16px;
+}
+
+.promo__item p{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.promo__cta{
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 860px){
+  .promo__grid{
+    grid-template-columns: 1fr;
+  }
+}
