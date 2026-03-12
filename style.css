@@ -847,3 +847,22 @@ ul,ol{
     min-height:340px;
   }
 }
+.badania__service-head p,
+.badania__service-head li,
+.badania__who li{
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.badania__service-head ul,
+.badania__who ul{
+  margin-top: 8px;
+}
+
+.badania__service-head h4{
+  margin-top: 16px;
+}
+
+.badania__services{
+  align-items: stretch;
+}
