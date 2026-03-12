@@ -874,3 +874,7 @@ ul,ol{
 .badania__service-head p{
   max-width:48ch;
 }
+.contact-hours{
+margin-top:10px;
+font-weight:500;
+}
