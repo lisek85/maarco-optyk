@@ -917,3 +917,39 @@ height:260px;
 }
 
 }
+/* KONTAKT */
+
+.contact-grid{
+display:grid;
+grid-template-columns: 420px 1fr;
+gap:30px;
+align-items:start;
+}
+
+.contact-map{
+width:100%;
+height:320px;
+border-radius:20px;
+overflow:hidden;
+}
+
+.contact-map iframe{
+width:100%;
+height:320px;
+border:0;
+display:block;
+}
+
+/* MOBILE */
+
+@media (max-width:900px){
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.contact-map iframe{
+height:260px;
+}
+
+}
