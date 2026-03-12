@@ -468,24 +468,22 @@ ul,ol{
 /* CONTACT */
 .contact-grid{
   display:grid;
-  grid-template-columns:1.1fr 0.9fr;
-  gap:18px;
-  align-items:stretch;
+  grid-template-columns: 420px 1fr;
+  gap:30px;
+  align-items:start;
 }
 
 .contact-map{
-  border-radius:18px;
+  width:100%;
+  height:320px;
+  border-radius:20px;
   overflow:hidden;
-  border:1px solid var(--border);
-  min-height:320px;
 }
 
 .contact-map iframe{
   width:100%;
   height:100%;
-  min-height:320px;
   border:0;
-  display:block;
 }
 
 /* FOOTER */
@@ -877,4 +875,15 @@ ul,ol{
 .contact-hours{
 margin-top:10px;
 font-weight:500;
+}
+@media (max-width: 900px){
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.contact-map{
+height:280px;
+}
+
 }
