@@ -863,3 +863,14 @@ ul,ol{
 .badania__services{
   align-items: stretch;
 }
+.section{
+  margin-top:60px;
+}
+
+.section-card{
+  padding:40px;
+}
+
+.badania__service-head p{
+  max-width:48ch;
+}
