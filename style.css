@@ -953,3 +953,243 @@ height:260px;
 }
 
 }
+/* =========================
+   GLOBAL FIX
+========================= */
+
+html{
+  font-size:16px !important;
+  -webkit-text-size-adjust:100% !important;
+}
+
+body{
+  zoom:1 !important;
+  transform:none !important;
+  margin:0 !important;
+  min-width:320px;
+}
+
+main,
+header,
+footer,
+section,
+div{
+  transform:none;
+}
+
+.section{
+  margin-top:24px !important;
+  padding:0 14px !important;
+}
+
+.section-card{
+  max-width:1240px !important;
+  width:100% !important;
+  margin:0 auto !important;
+  padding:28px !important;
+  border-radius:28px !important;
+}
+
+/* =========================
+   HERO FIX
+========================= */
+
+.hero{
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.hero-slider{
+  position:relative !important;
+  width:100% !important;
+  max-width:none !important;
+  min-height:78vh !important;
+  border-radius:0 !important;
+  overflow:hidden !important;
+  box-shadow:none !important;
+}
+
+.hero-slides{
+  position:relative !important;
+  min-height:78vh !important;
+}
+
+.hero-slide{
+  position:absolute !important;
+  inset:0 !important;
+  opacity:0;
+  visibility:hidden;
+}
+
+.hero-slide.is-active{
+  opacity:1 !important;
+  visibility:visible !important;
+  z-index:2 !important;
+}
+
+.hero-slide__bg{
+  position:absolute !important;
+  inset:0 !important;
+  background-size:cover !important;
+  background-position:center !important;
+}
+
+.hero-content{
+  position:absolute !important;
+  inset:0 !important;
+  display:flex !important;
+  align-items:center !important;
+  padding:72px 64px !important;
+  z-index:3 !important;
+}
+
+.hero-copy{
+  max-width:640px !important;
+}
+
+.hero-copy h1,
+.hero-copy h2{
+  font-size:clamp(42px,5vw,74px) !important;
+  line-height:1 !important;
+  margin:0 0 18px !important;
+}
+
+.hero-copy p{
+  font-size:18px !important;
+  line-height:1.7 !important;
+  margin:0 0 24px !important;
+}
+
+.hero-dots{
+  position:absolute !important;
+  left:64px !important;
+  bottom:30px !important;
+  z-index:4 !important;
+  display:flex !important;
+  gap:10px !important;
+}
+
+/* =========================
+   CONTACT + MAP FIX
+========================= */
+
+.contact-grid{
+  display:grid !important;
+  grid-template-columns: 420px minmax(0, 1fr) !important;
+  gap:30px !important;
+  align-items:start !important;
+}
+
+.contact-info{
+  min-width:0;
+}
+
+.contact-map{
+  display:block !important;
+  width:100% !important;
+  min-width:0 !important;
+  height:360px !important;
+  min-height:360px !important;
+  border-radius:20px !important;
+  overflow:hidden !important;
+  border:1px solid rgba(5,26,66,.12) !important;
+  background:#dfe8f2 !important;
+}
+
+.contact-map iframe{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  min-height:360px !important;
+  border:0 !important;
+}
+
+/* =========================
+   OFFER / BADANIA FIX
+========================= */
+
+.offer-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+  gap:20px !important;
+}
+
+.badania__services{
+  display:grid !important;
+  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+  gap:18px !important;
+  margin-top:18px !important;
+  padding:0 14px !important;
+}
+
+.badania__service-card{
+  width:100% !important;
+  min-width:0 !important;
+}
+
+.badania__who-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+  gap:18px !important;
+}
+
+.badania__kids{
+  display:grid !important;
+  grid-template-columns:1.1fr .9fr !important;
+  gap:18px !important;
+  align-items:center !important;
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+
+@media (max-width: 980px){
+  .offer-grid,
+  .badania__services,
+  .badania__who-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
+@media (max-width: 900px){
+  .contact-grid,
+  .badania__kids{
+    grid-template-columns:1fr !important;
+  }
+
+  .contact-map{
+    height:280px !important;
+    min-height:280px !important;
+  }
+
+  .contact-map iframe{
+    min-height:280px !important;
+  }
+}
+
+@media (max-width: 860px){
+  .hero-slider,
+  .hero-slides{
+    min-height:72vh !important;
+  }
+
+  .hero-content{
+    padding:34px 20px 72px !important;
+    align-items:flex-end !important;
+  }
+
+  .hero-copy h1,
+  .hero-copy h2{
+    font-size:clamp(34px,11vw,52px) !important;
+  }
+
+  .hero-copy p{
+    font-size:15px !important;
+  }
+
+  .hero-dots{
+    left:20px !important;
+    bottom:20px !important;
+  }
+}
